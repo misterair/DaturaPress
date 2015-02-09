@@ -30,10 +30,11 @@
 			
 			<div id="tabGradient"></div>
 			<div id="tab" class="read">
-				<?php previous_post_link('%link'); ?>
+				<?php previous_post_link('%link', '<div class="previousArticle"></div>'); ?>
 				<a class="readAction" href="#"></a>
-				<?php next_post_link('%link'); ?>
+				<?php next_post_link('%link', '<div class="previousArticle"></div>'); ?>
 			</div>
 			
 		</div>		
 	</aside>
+<div id="blackFilter"></div>

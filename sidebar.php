@@ -55,3 +55,4 @@
 			</div>			
 		</div>		
 	</aside>
+<div id="blackFilter"></div>
