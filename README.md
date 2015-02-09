@@ -1,9 +1,10 @@
 ## DaturaPress 0.2
 
-# Le Thème pour Wordpress inspiré par la Nature.
+# *Le Thème pour Wordpress inspiré par la Nature.*
 
 ----
 **Thème en cours de dev, tout rapport de bug est le bienvenu**
+
 *Testé sous Firefox et Webkit pour l'instant*
 
 En vrac:
@@ -20,10 +21,12 @@ En vrac:
 * affichage des articles sous forme de journal en option.
 
 
+
 A venir:
 * pages des images;
 * page 404 qui tue du chaton;
 * tests sous Internet Expl-horreur et son enfant caché webkit-mobile.
+
 
 
 Un jour, si tout va bien:
