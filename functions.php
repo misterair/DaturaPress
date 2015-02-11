@@ -224,7 +224,7 @@ add_filter( 'avatar_defaults', 'newgravatar' );
     return $avatar_defaults;
 }
 
-if ( function_exists('register_sidebar') )
+if ( function_exists('register_sidebar'))
     $widgetWrap = array(
         'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
@@ -235,10 +235,19 @@ if ( function_exists('register_sidebar') )
 if ( function_exists ('register_sidebar')) {
     register_sidebar ('article');
     register_sidebar(array(
+		'name' => 'sidebar_articles',
         'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
     ));
 }
+
+if ( function_exists ('register_sidebar')) 
+	$widget_article = array(
+		'name' => __('widgets_articles'),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+	);
+	register_sidebars(1, $widget_article );
 
 add_filter('body_class','day_body_class');
 function day_body_class($classes = '') {
@@ -261,5 +270,94 @@ function day_body_class($classes = '') {
     return $classes;
   }
 }
+
+/*Widget similar articles*/
+class similar_widget extends WP_Widget {
+
+function __construct() {
+parent::__construct(
+// Base ID of your widget
+'similar_widget', 
+
+// Widget name will appear in UI
+__('Similar articles Widget', 'similar_widget_domain'), 
+
+// Widget description
+array( 'description' => __( 'Show 3 similar articles with thumbnails', 'similar_widget_domain' ), ) 
+);
+}
+
+// Creating widget front-end
+// This is where the action happens
+public function widget( $args, $instance ) {
+$title = apply_filters( 'widget_title', $instance['title'] );
+echo $args['before_widget'];
+if ( ! empty( $title ) )
+echo $args['before_title'] . $title . $args['after_title'];
+?>
+  <ul class="relatedPosts">
+	<?php
+		$orig_post = $post;
+		global $post;
+		$tags = wp_get_post_tags($post->ID);
+			if ($tags) {
+				$tag_ids = array();
+				foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+				$args=array(
+					'tag__in' => $tag_ids,
+					'post__not_in' => array($post->ID),
+					'posts_per_page'=>3, // Number of related posts to display.
+					'caller_get_posts'=>1
+				);
+				$my_query = new wp_query( $args );
+				while( $my_query->have_posts() ) {
+				$my_query->the_post();
+			?>
+			<li class="relatedThumb">
+				<div class="roundIMG">
+					<?php the_post_thumbnail('archives-post-thumbnail',array(200,200));?>
+					<a rel="external" href="<? the_permalink()?>"><?php the_title(); ?></a>
+				</div>									
+			</li>
+		<? }
+	}
+	$post = $orig_post;
+	wp_reset_query();
+	?>
+  </ul>
+</div>
+<?php
+}
+		
+// Widget Backend 
+public function form( $instance ) {
+if ( isset( $instance[ 'title' ] ) ) {
+$title = $instance[ 'title' ];
+}
+else {
+$title = __( 'New title', 'similar_widget_domain' );
+}
+// Widget admin form
+?>
+<p>
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+</p>
+<?php 
+}
+	
+// Updating widget replacing old instances with new
+public function update( $new_instance, $old_instance ) {
+$instance = array();
+$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+return $instance;
+}
+} // Class similar_widget ends here
+
+// Register and load the widget
+function similar_load_widget() {
+	register_widget( 'similar_widget' );
+}
+add_action( 'widgets_init', 'similar_load_widget' );
  
 ?>

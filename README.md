@@ -2,6 +2,8 @@
 
 # *Le Thème pour Wordpress inspiré par la Nature.*
 
+
+![](https://github.com/misterair/DaturaPress/blob/master/screenshot.png)
 ----
 **Thème en cours de dev, tout rapport de bug est le bienvenu**
 
@@ -18,7 +20,8 @@ En vrac:
 * sidebar secondaire pour les articles;
 * affichage des commentaires sous forme de conversations;
 * support des widgets;
-* affichage des articles sous forme de journal en option.
+* affichage des articles sous forme de journal en option;
+* widget "Articles similaires" intégré au thème.
 
 
 
@@ -32,7 +35,7 @@ A venir:
 Un jour, si tout va bien:
 * LazyLoad (aide bienvenue);
 * widgets personnalisés;
-* [insert here idea]
+* [insert idea here]
 
 
 

@@ -291,6 +291,7 @@ content: "\f03e";
 header{
 position: absolute;
 width:240px;
+z-index:3;
 background: linear-gradient(0deg,rgba(34,34,34,0) 0%, rgba(34,34,34,1) 10%, #2e2e2e 100%) transparent;
 }
 #logo.name{
@@ -519,19 +520,39 @@ content:"\f138";
 margin-right: 8px;
 color:#D2CCC1;
 }
-#panel_contener .widget_categories ul li:before{
+.sectionCentrage .widget ul li:before{
+font-family: "FontAwesome";
+font-size: 1.1em;
+content:"\f138";
+margin-right: 8px;
+color:#555;
+}
+.widget_categories ul li:before{
 content:"\f114";
 }
-#panel_contener .widget_recent_comments ul li:before{
+.widget_recent_comments ul li:before{
 content:"\f0e5";
 }
-.widget h2{
+#panel_contener .widget h2{
 font-size: 1.3em;
-color:#ccc;
 text-align: left;
-text-shadow: 0 1px rgba(255,255,255,0.02)
 }
-
+.sectionCentrage .widget h2{
+font-size: 1.2em;
+text-align: center;
+}
+#panel_contener .widget h2{
+text-shadow: 0 1px rgba(255,255,255,0.02);
+color:#ccc;
+}
+.sectionCentrage .widget ul, .sectionCentrage .widget li {
+list-style: outside none none;
+padding: 0px;
+margin: 0px;
+}
+.sectionCentrage .widget a:link, .sectionCentrage .widgeta:visited{
+color:#222;
+}
 /*Search*/
 input.search-field{
 background:transparent;
@@ -1179,42 +1200,79 @@ background:-webkit-linear-gradient(top left, rgba(255,255,255,0) 0%, rgba(255,25
 ul.relatedPosts {
 display: block;
 list-style: none outside none;
-margin: 0 auto;
-max-width: 850px;
+max-width: 780px;
 }
+.sectionCentrage ul.relatedPosts,#panel_contener ul.relatedPosts{
+margin: 0 auto;
+}
+
 ul.relatedPosts h3{
 text-align:center;
 font-variant: small-caps;
 margin-bottom: 2em;
 margin-left: -4em;
 }
+#panel_contener ul.relatedPosts li:before, .sectionCentrage ul.relatedPosts li:before {
+content:" ";
+}
 ul.relatedPosts li {
 display: inline-block;
-margin: 0 10px;
-width: 220px;
+max-width: 220px;
 text-align: center;
 vertical-align: top;
 }
-#lightbox section.content .sectionCentrage ul.relatedPosts li img {
+.sectionCentrage ul.relatedPosts  li{
+margin:0 10px;
+}
+#panel_contener ul.relatedPosts li{
+margin-left: -2px;
+}
+
+ul.relatedPosts li img, #lightbox section.content .sectionCentrage ul.relatedPosts li img {
 border: none;
 border-radius: 0;
 display: block;
 margin: 0 auto;
+transition-duration: 0.15s;
 }
 .roundIMG{
-height:120px;
-width:220px;
-box-shadow: 0px 1px rgb(255, 255, 255);
-border: 1px solid rgb(204, 204, 204);
-border-radius: 4px;
-overflow:hidden;
-background:#fff;
+height: 120px;
+overflow: hidden;
+background: #FFF;
+max-width: 220px;
+position: relative;
+border-radius: 8px;
 margin: 0 auto;
 }
+.sectionCentrage ul.relatedPosts  li .roundIMG{
+box-shadow: 0 1px #fff, 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
+border: solid 1px #ccc;
+}
+#panel_contener ul.relatedPosts li .roundIMG{
+box-shadow: 0 1px rgba(255,255,255,0.15), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
+border: solid 1px #171717;
+}
+
 ul.relatedPosts li a{
 color:#222;
+text-shadow: 0 1px #fff;
 font-variant: small-caps;
 font-weight: bold;
+position: absolute;
+bottom:50%;
+transform: translate(0 , 50%);
+left:0;
+padding:4px;
+opacity:0;
+transition-duration: 0.15s;
+}
+li.relatedThumb:hover > .roundIMG > a{
+opacity:1;
+}
+li.relatedThumb:hover > .roundIMG > img{
+opacity:0.75;
+filter: url(blur.svg#blur); 
+-webkit-filter: blur(3px); 
 }
 
 /*Sky*/

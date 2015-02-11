@@ -22,40 +22,10 @@
 			<div id="clear"></div>
 	        <?php the_content(); ?>
 	        <div id="clear"></div>
-	    	 <ul class="relatedPosts">
-				<h3>Dans la même thèmatique:</h3>
-					<?php
-						$orig_post = $post;
-						global $post;
-						$tags = wp_get_post_tags($post->ID);
-						if ($tags) {
-							$tag_ids = array();
-							foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-							$args=array(
-								'tag__in' => $tag_ids,
-								'post__not_in' => array($post->ID),
-								'posts_per_page'=>3, // Number of related posts to display.
-								'caller_get_posts'=>1
-							);
-							$my_query = new wp_query( $args );
-							while( $my_query->have_posts() ) {
-							$my_query->the_post();
-					?>
-						<li class="relatedThumb">
-							<a rel="external" href="<? the_permalink()?>">
-								<div class="roundIMG">
-									<?php the_post_thumbnail('archives-post-thumbnail',array(200,200));?>
-								</div>							
-								<br />
-								<?php the_title(); ?>
-							</a>
-						</li>
-					<? }
-				}
-			$post = $orig_post;
-			wp_reset_query();
-			?>
-			</ul>
+	    	<?php if ( function_exists ( dynamic_sidebar(5) ) ) : ?>
+				<?php dynamic_sidebar (5); ?>
+			<?php endif; ?>
+			<div id="clear"></div>
 	    </div>
 	    <div class="infos tags">
 			<?php the_category(' ') ?>
