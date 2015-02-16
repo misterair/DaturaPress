@@ -288,7 +288,7 @@ content: "\f03e";
 }
 
 /*Logo*/
-header{
+#panel_contener header{
 position: absolute;
 width:240px;
 z-index:3;
@@ -314,9 +314,9 @@ color: #fff;
 text-indent: 0em;
 }
 #logo.picture{
-background:#171717;
+background:transparent;
 border-radius: 70px;
-box-shadow: 0 1px rgba(255, 255, 255, 0.08);
+box-shadow: 0px 1px rgba(255, 255, 255, 0.08), 0px 2px 3px rgba(0, 0, 0, 0.65) inset;
 height: 95px;
 margin: 10px 65px;
 overflow: hidden;
@@ -327,6 +327,8 @@ position: relative;
 position: absolute;
 top: 0px;
 left: 0;
+background-color:#171717;
+z-index:-1;
 }
 /*Tab*/
 #tabGradient{
@@ -424,8 +426,28 @@ content:"\f0d9";
 .readAction:before{
 content:"\f0d8";
 }
+.readAction.return:before{
+content:"\f112";
+}
 a[rel="next"]:before{
 content:"\f0da";
+}
+
+/*Images Mode*/
+footer.read{
+background: #171717;
+bottom: 0;
+left:0;
+box-shadow: 0 2px 2px #111 inset;
+height: 40px;
+position: fixed;
+width: 100%;
+z-index:4;
+font-family: "FontAwesome";
+color:#fff;
+}
+footer.read a:link, footer.read a:visited{
+color:#fff;
 }
 
 /*Panels*/
@@ -513,6 +535,8 @@ color: #444;
 text-shadow: 0 1px rgba(255,255,255,0.16);
 }
 
+
+/*Widgets*/
 #panel_contener ul li:before{
 font-family: "FontAwesome";
 font-size: 1.1em;
@@ -527,11 +551,15 @@ content:"\f138";
 margin-right: 8px;
 color:#555;
 }
-.widget_categories ul li:before{
-content:"\f114";
+#panel_contener .widget_categories ul li:before{
+content:"\f07b";
 }
-.widget_recent_comments ul li:before{
-content:"\f0e5";
+#panel_contener .widget_recent_comments ul li:before{
+content:"\f075";
+}
+
+#panel_contener .widget h2 a{
+color:#ccc;
 }
 #panel_contener .widget h2{
 font-size: 1.3em;
@@ -553,6 +581,14 @@ margin: 0px;
 .sectionCentrage .widget a:link, .sectionCentrage .widgeta:visited{
 color:#222;
 }
+
+#panel_contener .rsswidget img[alt="RSS"]{
+display:none;
+}
+#panel_contener .widget_rss li:before{
+content:"\f09e";
+}
+
 /*Search*/
 input.search-field{
 background:transparent;
@@ -683,15 +719,83 @@ filter: url(blur.svg#blur);
 -webkit-filter: blur(3px); 
 }
 
-#lightbox section.largeThumbnail{
-background:transparent;
-}
+#lightbox section.largeThumbnail{ background:transparent;}
 #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
 border:solid 8px #fff;
 box-shadow:0 0 4px rgba(0,0,0,0.35);
 margin: 8px auto;
 max-height: 278px;
 width:auto;
+}
+
+/*Image.php*/
+body.single-attachment article{ margin-left: 0;}
+body.single-attachment aside{ width: 0;}
+body.single-attachment aside #tab{ display: none;}
+body.single-attachment aside #tabGradient{ bottom: 0;}
+body.single-attachment #asideCorner, body.single-attachment #asideCornerShadow { display: block;}
+
+#lightbox.images section.largeThumbnail{
+position: absolute;
+top: 49%;
+transform: translate(0 , -50%);
+border: none;
+box-shadow: 0 1px #fff;
+}
+.gradientPic{
+position: absolute;
+left:0;
+width: 100%;
+height: 4px;
+z-index:2;
+}
+.gradientPic.top{
+top:0;
+background-color:transparent;
+background-image: linear-gradient(0deg, rgba(0,0,0, 0) 0%, rgba(0,0,0, 0.65) 100%);
+background-image: -webkit-linear-gradient(0deg, rgba(0,0,0, 0) 0%, rgba(0,0,0, 0.65) 100%);
+}
+.gradientPic.bottom{
+bottom:0;
+background-color:transparent;
+background-image: linear-gradient(180deg, rgba(0,0,0, 0) 0%, rgba(0,0,0, 0.65) 100%);
+background-image: -webkit-linear-gradient(180deg, rgba(0,0,0, 0) 0%, rgba(0,0,0, 0.65) 100%);
+}
+#lightbox section.largeThumbnail img{
+padding:0;
+margin:0;
+box-shadow:none;
+border-radius: 0;
+}
+#lightbox.images .ThumbBack{
+position: absolute;
+top:0;
+overflow:hidden;
+width:100%;
+height:auto;
+background:#eee;
+}
+#lightbox.images .ThumbBack img.attachment-full{
+left:0;
+top:-35px;
+width:calc(100% + 5px);
+height:auto;
+opacity:0.75;
+filter: url(blur.svg#blur); 
+-webkit-filter: blur(3px); 
+}
+
+#lightbox.images section.largeThumbnail{
+background:transparent;
+}
+#lightbox.images section.largeThumbnail > img.attachment-full{
+border:solid 8px #fff;
+box-shadow:0 0 4px rgba(0,0,0,0.35);
+margin: 14px auto;
+height:auto;
+max-height: calc (95% - 60px);
+width: auto;
+max-width: 95%;
 }
 
 /*Corners*/
