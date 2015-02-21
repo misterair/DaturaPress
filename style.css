@@ -400,7 +400,7 @@ color:#fff;
 #tab.read.bis{
 display:none;
 }
-a.readAction, a[rel="prev"], a[rel="next"]{
+a.readAction, a[rel="prev"], a[rel="next"], div.prev, div.next{
 font-family: "FontAwesome";
 font-size: 1.68em;
 color:#eee;
@@ -410,14 +410,14 @@ line-height: 1.7em;
 position: absolute;
 text-indent: 0;
 }
-a[rel="prev"]{
+a[rel="prev"], div.prev{
 left:12px
 }
 .readAction{
 left:50%;
 transform: translate(-50%, 0);
 }
-a[rel="next"]{
+a[rel="next"], div.next{
 right:12px
 }
 a[rel="prev"]:before{
@@ -787,13 +787,14 @@ filter: url(blur.svg#blur);
 
 #lightbox.images section.largeThumbnail{
 background:transparent;
+height:100%;
 }
 #lightbox.images section.largeThumbnail > img.attachment-full{
 border:solid 8px #fff;
 box-shadow:0 0 4px rgba(0,0,0,0.35);
 margin: 14px auto;
 height:auto;
-max-height: calc (95% - 60px);
+max-height: calc(95% - 45px);
 width: auto;
 max-width: 95%;
 }

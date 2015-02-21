@@ -14,7 +14,7 @@
 		<?php the_post_thumbnail( '404-post-thumbnail' ); ?>
 	</section>
 	<section class="content">
-		<div class="sectionCentrage">
+		<div class="sectionCentrage  <?php echo get_theme_mod( 'pages_settings', 'pages_settings' ); ?>">
 			<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 			<div id="clear"></div>
 	        <?php the_content(); ?>
