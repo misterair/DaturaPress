@@ -84,7 +84,7 @@ text-shadow: 0 1px #fff;
 transition-duration: 0.15s
 }
 .screen-reader-text{display:none}
-
+button::-moz-focus-inner {border: 0;}
 :focus, :selected {outline: 0 none}
 #lightbox section img.wp-smiley, img.wp-smiley {
 float: none;
@@ -719,7 +719,11 @@ filter: url(blur.svg#blur);
 -webkit-filter: blur(3px); 
 }
 
-#lightbox section.largeThumbnail{ background:transparent;}
+#lightbox section.largeThumbnail{
+background:transparent;
+border: none;
+border-bottom: 1px solid #aaa;
+}
 #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
 border:solid 8px #fff;
 box-shadow:0 0 4px rgba(0,0,0,0.35);
@@ -1130,7 +1134,7 @@ transition:0.25s;
 font-family: "FontAwesome";
 content:"\f075";
 font-size: 32px;
-color: rgba(0,0,0,0.5);
+color: #222;
 position: absolute;
 display: block;
 top: 0px;
@@ -1693,6 +1697,9 @@ right: -9px;
 }
 
 @media (min-width:400px) and (max-width:1200px) {
+#lightbox section.blurThumbnail img.attachment-404-post-thumbnail{
+left:0;
+}
 #lightbox {
 left:36px;
 }
@@ -1796,6 +1803,17 @@ nav p{
 float: right;
 padding: 0 18px 0 12px;
 border-radius: 14px 0 0 14px;
+}
+}
+@media (max-width:560px) {
+#lightbox section.blurThumbnail {display:none}
+#lightbox section.largeThumbnail > img.attachment-404-post-thumbnail {
+border: none;
+box-shadow: none;
+margin: 0 auto;
+max-height: 100%;
+height:auto;
+width: 100%;
 }
 }
 @media (max-width:400px) {
