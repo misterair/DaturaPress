@@ -36,6 +36,13 @@
 		<p class="commentArg"><?php comments_number( 'Commentez !', 'Un commentaire', '% commentaires' ); ?></p>
 			<?php comments_template(); ?>
     </section>
+
+	<div id="tab" class="read bis">
+		<?php previous_post_link('%link', '<div class="previousArticle"></div>'); ?>
+		<a class="readAction" href="#"></a>
+		<?php next_post_link('%link', '<div class="previousArticle"></div>'); ?>
+	</div>
+    
 </div>
     
 <?php endwhile; ?>

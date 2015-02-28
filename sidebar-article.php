@@ -27,7 +27,7 @@
 				<div id="separator"><div class="separator"></div></div>
 			</div>
 			
-			<div id="tabGradient"></div>
+			<div id="tabGradient" class="reading"></div>
 			<div id="tab" class="read">
 				<?php previous_post_link('%link', '<div class="previousArticle"></div>'); ?>
 				<a class="readAction" href="#"></a>

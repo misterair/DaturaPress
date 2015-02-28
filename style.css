@@ -84,7 +84,7 @@ text-shadow: 0 1px #fff;
 transition-duration: 0.15s
 }
 .screen-reader-text{display:none}
-button::-moz-focus-inner {border: 0;}
+button::-moz-focus-inner, a::-moz-focus-inner {border: 0;}
 :focus, :selected {outline: 0 none}
 #lightbox section img.wp-smiley, img.wp-smiley {
 float: none;
@@ -708,6 +708,7 @@ overflow:hidden;
 width:100%;
 height:auto;
 background:#eee;
+border-top: none;
 }
 #lightbox section.blurThumbnail img.attachment-404-post-thumbnail{
 left:-5px;
@@ -1694,6 +1695,22 @@ left: -16px;
 section.odd:after {
 right: -9px;
 }
+#tab.read{
+display:none;
+}
+#tabGradient.reading{
+bottom:0;
+}
+#tab.read #panel_1{
+margin-bottom:0;
+}
+#tab.read.bis{
+display:block;
+position: fixed;
+width: 100%;
+bottom: 0;
+z-index:99;
+}
 }
 
 @media (min-width:400px) and (max-width:1200px) {
@@ -1725,18 +1742,6 @@ display:none;
 }
 #wrap.lightbox > #asideCornerShadow, #wrap.lightbox > #asideCorner, #wrap.lightbox > #asideCornerOff{
 display:none;
-}
-}
-
-@media (max-width:1200px) {
-#panel_contener.p0 > #tab.read{
-display:none;
-}
-#tab.read.bis{
-display:block;
-position: fixed;
-width: 100%;
-bottom: 0;
 }
 }
 
