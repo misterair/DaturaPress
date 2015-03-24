@@ -25,7 +25,7 @@
 </head>
 <body <?php body_class(); ?>>
 <!--[if IE]>
-  <div style='border:solid #D41C1D; background: #FEEFDA; text-align: center; clear: both; position: relative;'>
+  <div style='z-index:999;border:solid #D41C1D; background: #FEEFDA; text-align: center; clear: both; position: relative;'>
     <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
     	<a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'>X</a>
     </div>

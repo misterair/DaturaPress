@@ -1,13 +1,13 @@
-## DaturaPress 0.2
+## DaturaPress 0.9.
 
-# *Le Thème pour Wordpress inspiré par la Nature.*
+# *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
 
 
 ![](https://github.com/misterair/DaturaPress/blob/master/screenshot.png)
 ----
-**Thème en cours de dev, tout rapport de bug est le bienvenu**
 
-*Testé sous Firefox et Webkit pour l'instant*
+(démo sur [Remitaines.com](http://remitaines.com))
+
 
 En vrac:
 * Home "timeline" mais en mieux;
@@ -22,13 +22,11 @@ En vrac:
 * support des widgets;
 * affichage des articles sous forme de journal en option;
 * widget "Articles similaires" intégré au thème.
-
+* page 404 qui tue du chaton;
 
 
 A venir:
-* pages des images;
-* page 404 qui tue du chaton;
-* tests sous Internet Expl-horreur et son enfant caché webkit-mobile.
+* plus de screenshots.
 
 
 
