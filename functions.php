@@ -59,6 +59,7 @@ foreach( $colors as $color ) {
 }
 add_action( 'customize_register', 'Datura_customize_register' );
 
+
 /*Clouds Settings*/
 function Cloud_customize_register( $wp_customize ) {
 $wp_customize->add_setting('clouds_settings', array());
@@ -94,8 +95,19 @@ $wp_customize->add_control('pages_settings', array(
     'journal'  => 'Journal',
   ),
 ));
+$wp_customize->add_setting('dark_settings', array());
+$wp_customize->add_control('dark_settings', array(
+  'label'      => __('Dark Theme', 'Dark'),
+  'section'    => 'layout',
+  'settings'   => 'dark_settings',
+  'type'       => 'radio',
+  'choices'    => array(
+    ''   => 'Normal Theme',
+    'dark'  => 'Dark Theme',
+  ),
+));
 $wp_customize->add_section('layout' , array(
-	'title' => __('Layout','Text', 'Pages', 'Cloud'),
+	'title' => __('Layout', 'Text', 'Pages', 'Cloud', 'Dark'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );

@@ -8,6 +8,7 @@
   $sky_night = get_option('sky_night');
   $pot_color = get_option('pot_color');
 ?>
+	
 <style>
   article header {display:  <?php echo $clouds_settings; ?>; }
   a:link,a:visited, .tab_1:before, #panel_contener.p1 > #tab > .tab_1:before { color:  <?php echo $content_link_color; ?>; }

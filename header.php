@@ -13,7 +13,7 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /><?php wp_head(); ?>
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="alternate" type="application/atom+xml" title="Atom" href="<?php bloginfo('atom_url'); ?>" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
 	<!--[if lt IE 9]>
 			<script src="<?php bloginfo('template_url'); ?>/js/html5shiv.js"></script>
@@ -23,7 +23,11 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+<?php
+  $dark_settings = get_theme_mod('dark_settings');
+?>
+	
+<body <?php body_class(); ?> id="<?php echo $dark_settings; ?>" >
 <!--[if IE]>
   <div style='z-index:999;border:solid #D41C1D; background: #FEEFDA; text-align: center; clear: both; position: relative;'>
     <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
