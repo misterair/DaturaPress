@@ -1,4 +1,4 @@
-## DaturaPress 1.0
+## DaturaPress 1.1
 
 # *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
 
@@ -24,8 +24,8 @@ En vrac:
 * affichage des articles sous forme de journal (texte multi-colonnes) en option;
 * widget "Articles similaires" intégré au thème;
 * page 404 qui fait tomber la pluie;
-* theme Dark à activer dans les paramètres.
-
+* thème dark à activer dans les paramètres:
+* option pour activer le thème dark la nuit seulement.
 
 
 Un jour, si tout va bien:

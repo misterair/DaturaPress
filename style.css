@@ -46,7 +46,7 @@ text-shadow:0 1px #fff;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-body#dark{background:#333130;}
+body#dark, body#darkNight.night{background:#333130;}
 h1,h2,h3,h4,h5{text-decoration:none}
 button{cursor: pointer;background:transparent;border:none}
 a:link,a:visited {color: #94B203;text-decoration:none;}
@@ -84,8 +84,16 @@ cursor: pointer;
 text-shadow: 0 1px #fff;
 transition-duration: 0.15s
 }
-#commentform input, #commentform textarea{background: #DCD6CD !important;}
-body#dark #commentform input, #commentform textarea{background: #171717 !important; color:#fff;}
+#commentform input, #commentform textarea{
+background: #DCD6CD !important;
+text-shadow: 0px 1px #000;
+}
+body#dark #commentform input, #commentform textarea, body#darkNight.night #commentform input, #commentform textarea{
+background: #171717 !important;
+color:#fff;
+box-shadow: 0px 1px rgba(255,255,255,0.08), 0px 2px 2px #000 inset;
+border: 1px solid #000;
+}
 .screen-reader-text{display:none}
 button::-moz-focus-inner, a::-moz-focus-inner {border: 0;}
 :focus, :selected {outline: 0 none}
@@ -674,7 +682,7 @@ position: absolute;
 bottom: 10px;
 line-height: 0px;
 }
-body#dark section:after{
+body#dark section:after, body#darkNight.night section:after{
 text-shadow: 1px 1px rgba(255, 255, 255, 0.08), 3px 0 #333130, -3px 0 #333130, 0 3px #333130, 0 -3px #333130;
 color:#171717;
 }
@@ -694,7 +702,7 @@ margin:0 24px 8px 24px;
 position:relative;
 padding:0;
 }
-body#dark section > ul{
+body#dark section > ul, body#darkNight.night section > ul{
 background: #222;
 color: #fff;
 text-shadow: 0 1px rgba(255, 255, 255, 0.08);
@@ -739,7 +747,7 @@ background:transparent;
 border: none;
 border-bottom: 1px solid #aaa;
 }
-body#dark #lightbox section.largeThumbnail{background:transparent;}
+body#dark #lightbox section.largeThumbnail, body#darkNight.night #lightbox section.largeThumbnail{background:transparent;}
 #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
 border:solid 8px #fff;
 box-shadow:0 0 4px rgba(0,0,0,0.35);
@@ -747,7 +755,7 @@ margin: 8px auto;
 max-height: 278px;
 width:auto;
 }
-body#dark #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{border:solid 8px #171717;}
+body#dark #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail, body#darkNight.night #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{border:solid 8px #171717;}
 
 /*Image.php*/
 body.single-attachment article{ margin-left: 0;}
@@ -843,7 +851,7 @@ border-top:none;
 border-right:none;
 border-color:#222 transparent;
 }
-body#dark section.odd ul > #corner{
+body#dark section.odd ul > #corner, body#darkNight.night section.odd ul > #corner{
 border:30px solid;
 border-top:none;
 border-right:none;
@@ -876,7 +884,7 @@ border-top:none;
 border-left:none;
 border-color:#95B304 transparent;
 }
-body#dark section.even ul > #corner{
+body#dark section.even ul > #corner, body#darkNight.night section.even ul > #corner{
 border:30px solid;
 border-top:none;
 border-left:none;
@@ -942,7 +950,7 @@ text-align:center;
 padding: 4px;
 text-indent: 0;
 }
-body#dark section ul #corner p.cornerInfos{
+body#dark section ul #corner p.cornerInfos, body#darkNight.night section ul #corner p.cornerInfos{
 background:#171717;
 box-shadow: 0 1px 2px #000;
 }
@@ -1074,7 +1082,7 @@ font-variant: small-caps;
 font-size:2.2em;
 }
 section h1 a:link, section h1 a:visited{color: #222;}
-body#dark section h1 a:link, section h1 a:visited{color: #ddd;}
+body#dark section h1 a:link, section h1 a:visited, body#darkNight.night section h1 a:link, section h1 a:visited{color: #ddd;}
 .infos{
 text-align: center;
 text-indent:0;
@@ -1088,7 +1096,7 @@ margin-bottom:8px;
 color:#444;
 z-index:2;
 }
-body#dark .infos.date{
+body#dark .infos.date, body#darkNight.night .infos.date{
 color:#eee;
 text-shadow: 0px 1px rgba(255,255,255,0.08);
 }
@@ -1106,7 +1114,7 @@ float:right;
 box-shadow: 0 -1px #ccc, 0 -2px #fff;
 background: #F7F6F4;
 }
-body#dark .infos.tags {
+body#dark .infos.tags, body#darkNight.night .infos.tags{
 box-shadow: 0px -1px #171717, 0px -2px rgba(255,255,255,0.08);
 background: #222;
 text-shadow: 0 1px rgba(255,255,255,0.08);
@@ -1132,7 +1140,7 @@ color:#555;
 margin-right: 0.2em;
 font-size: 1.1em;
 }
-body#dark .infos.tags a[rel='tag']:before{color:#eee}
+body#dark .infos.tags a[rel='tag']:before, body#darkNight.night .infos.tags a[rel='tag']:before{color:#eee}
 .infos.tags a[rel='category tag']{
 margin-right: 0.4em;
 font-variant: small-caps;
@@ -1150,7 +1158,7 @@ color:#555;
 margin-right: 0.2em;
 font-size: 1.1em;
 }
-body#dark .infos.tags a[rel='category tag']:before{color:#eee}
+body#dark .infos.tags a[rel='category tag']:before, body#darkNight.night infos.tags a[rel='category tag']:before{color:#eee}
 
 /*Bubble Comments*/
 .Picture:hover > .bubbleComments{
@@ -1228,7 +1236,7 @@ bottom: 0;
 width: 100%;
 box-shadow: 0px 1px #FFF, 0px -1px #CCC inset;
 }
-body#dark .gradient{ box-shadow: 0px 1px #171717, 0px -1px #222 inset;}
+body#dark .gradient, body#darkNight.night .gradient{ box-shadow: 0px 1px #171717, 0px -1px #222 inset;}
 .gradient2{
 background: linear-gradient(0deg, rgba(15, 15, 15, 0) 94%, rgba(15, 15, 15, 0.75) 100%) transparent;
 height: 150px;
@@ -1263,7 +1271,7 @@ border-top: solid 1px rgba(15,15,15,0.2);
 border-bottom: solid 1px rgba(15,15,15,0.2);
 box-shadow:0 2px 2px rgba(15,15,15,0.28),0 -2px 2px rgba(15,15,15,0.28);
 }
-body#dark #lightbox section{
+body#dark #lightbox section, body#darkNight.night #lightbox section{
 background:#222;
 color:#fff;
 text-shadow:0 1px rgba(255,255,255,0.08);
@@ -1404,8 +1412,8 @@ margin: 0 auto;
 box-shadow: 0 1px rgba(255,255,255,0.08), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
 border: solid 1px #ccc;
 }
-body#dark .sectionCentrage ul.relatedPosts  li .roundIMG{
-box-shadow: 0 1px #fff, 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
+body#dark .sectionCentrage ul.relatedPosts  li .roundIMG, body#darkNight.night .sectionCentrage ul.relatedPosts  li .roundIMG{
+box-shadow: 0 1px rgba(255,255,255,0.08), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
 border: solid 1px #171717;
 }
 #panel_contener ul.relatedPosts li .roundIMG{
@@ -1454,7 +1462,7 @@ body.night #sky{
 background: url('abstract-clouds.png') repeat-x;
 background-color:#311D3C;
 }
-body#dark.night #sky{
+body#dark.night #sky, body#darkNight.night #sky{
 background: url('abstract-cloudsDark.png') repeat-x;
 background-color:#0F051B;
 }
@@ -1475,7 +1483,7 @@ height: 96px;
 background: url('cloud.png') repeat-x;
 z-index:1;
 }
-body#dark #cloud{background: url('cloudDark.png') repeat-x;}
+body#dark #cloud, body#darkNight.night #cloud{background: url('cloudDark.png') repeat-x;}
 /*Tronc*/
 #tronc{
 height: 100%;
@@ -1493,7 +1501,7 @@ margin-left: 3px;
 width: 10px;
 box-shadow:-2px 1px 2px #000 inset, 1px 0 rgba(255, 255, 255, 0.08);
 }
-body#dark .tronc{background:#171717;}
+body#dark .tronc, body#darkNight.night .tronc{background:#171717;}
 
 /*Pot*/
 #pot{
@@ -1524,7 +1532,7 @@ border-top-width:125px;
 border-bottom:none;
 border-color:transparent #D2CCC1;
 }
-body#dark .potBottom{
+body#dark .potBottom, body#darkNight.night .potBottom{
 border:25px solid;
 border-top-width:125px;
 border-bottom:none;
@@ -1547,7 +1555,7 @@ text-shadow:1px 1px rgba(255, 255, 255, 0.15), 0 0 1px #0F0F0F;
 #lightbox section.comments{
 background:#DCD6CD;
 }
-body#dark #lightbox section.comments{
+body#dark #lightbox section.comments, body#darkNight.night #lightbox section.comments{
 background:#333130;
 }
 #lightbox section .commentArea {
@@ -1582,7 +1590,7 @@ width:55px;
 height:55px;
 margin: 0 auto;
 }
-body#dark #lightbox section.comments .comment-gravatar img{
+body#dark #lightbox section.comments .comment-gravatar img, body#darkNight.night #lightbox section.comments .comment-gravatar img{
 box-shadow:0 1px rgba(255,255,255,0.08);
 border: 1px solid #171717;
 }
@@ -1595,7 +1603,7 @@ box-shadow: 0px 1px 3px #aaa;
 display: inline-block;
 position:relative;
 }
-body#dark .commentArea  >.commentmetadata{
+body#dark .commentArea  >.commentmetadata, body#darkNight.night .commentArea  >.commentmetadata{
 background:#222;
 box-shadow: 0 1px 3px #000;
 }
@@ -1609,7 +1617,7 @@ line-height: 55px;
 text-indent: 0px;
 color: #F7F6F4;
 }
-body#dark .commentmetadata:before{
+body#dark .commentmetadata:before, body#darkNight.night .commentmetadata:before{
 color:#222;
 text-shadow: -1px 0 #222;
 }
@@ -1640,7 +1648,7 @@ width: 100%;
 margin: 0px;
 box-shadow: 2px -2px 3px #aaa;
 }
-body#dark .commentsZone {
+body#dark .commentsZone, body#darkNight.night .commentsZone{
 background:#222;
 box-shadow: 2px -2px 3px #000;
 }
@@ -1655,7 +1663,7 @@ text-shadow: 0px -2px #AAA;
 top: -17px;
 color: #F7F6F4;
 }
-body#dark .commentsZone:before {
+body#dark .commentsZone:before, body#darkNight.night .commentsZone:before{
 text-shadow: 0px -2px #000;
 color: #222;
 }
@@ -1668,7 +1676,7 @@ text-align:center;
 color: #666;
 font-size: 1.2em;
 }
-body#dark .commentArg{color:#eee}
+body#dark .commentArg, body#darkNight.night .commentArg{color:#eee}
 #comment {
 display: table-column;
 float: right;

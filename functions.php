@@ -106,8 +106,19 @@ $wp_customize->add_control('dark_settings', array(
     'dark'  => 'Dark Theme',
   ),
 ));
+$wp_customize->add_setting('darkNight_settings', array());
+$wp_customize->add_control('darkNight_settings', array(
+  'label'      => __('DarkNight Theme', 'DarkNight'),
+  'section'    => 'layout',
+  'settings'   => 'darkNight_settings',
+  'type'       => 'radio',
+  'choices'    => array(
+    ''   => 'Normal night theme',
+    'darkNight'  => 'Dark night theme',
+  ),
+));
 $wp_customize->add_section('layout' , array(
-	'title' => __('Layout', 'Text', 'Pages', 'Cloud', 'Dark'),
+	'title' => __('Layout', 'Text', 'Pages', 'Cloud', 'Dark', 'DarkNight'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );
@@ -274,7 +285,6 @@ if ( function_exists ('register_sidebar'))
 
 add_filter('body_class','day_body_class');
 function day_body_class($classes = '') {
-  /* pages Day and Night are for testing */
   if( is_page('Day') ) {
     $classes[] = 'day';
     return $classes;

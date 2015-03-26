@@ -25,9 +25,10 @@
 </head>
 <?php
   $dark_settings = get_theme_mod('dark_settings');
+  $darkNight_settings = get_theme_mod('darkNight_settings');
 ?>
 	
-<body <?php body_class(); ?> id="<?php echo $dark_settings; ?>" >
+<body <?php body_class(); ?> id="<?php echo $dark_settings; ?><?php echo $darkNight_settings; ?>" >
 <!--[if IE]>
   <div style='z-index:999;border:solid #D41C1D; background: #FEEFDA; text-align: center; clear: both; position: relative;'>
     <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
