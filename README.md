@@ -33,5 +33,8 @@ Un jour, si tout va bien:
 * [insert idea here]
 
 
+*Crédit: [Wordpress.com emoticons](http://jannekevandorpe.com/2014/03/19/secret-new-wordpress-smileys/) (License: GPLv2 or later)*
+
+
 
 
