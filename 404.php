@@ -510,6 +510,11 @@ animation-name: pot;
 	</article>
 	
 </div>
+<script type="text/javascript">
+  <!--
+setTimeout("location.href = '<?php echo home_url( "/" ); ?>';",25000);
+-->
+  </script>
 </body>
 <?php  $pot_color = get_option('pot_color');?>
 <style>
