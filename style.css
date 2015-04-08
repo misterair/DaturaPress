@@ -1469,11 +1469,11 @@ background-color:#0F051B;
 }
 body.day #sky{
 background: url('abstract-clouds.png') repeat-x;
-background-color: #BD311A;
+background-color: #33A9FF;
 }
 body#dark.day #sky{
 background: url('abstract-cloudsDark.png') repeat-x;
-background-color: #33A9FF;
+background-color: #BD311A;
 }
 #sky{
 background: url('abstract-clouds.png') repeat-x;
