@@ -73,8 +73,8 @@ function Cloud_customize_register( $wp_customize ) {
       '32px'   => '32px',
       '28px'   => '28px',
       '24px'   => '24px',
-      '21px'   => '21px'
-      '18px'   => '18px'
+      '21px'   => '21px',
+      '18px'   => '18px',
     ),
   ));
 $wp_customize->add_setting('clouds_settings', array());
