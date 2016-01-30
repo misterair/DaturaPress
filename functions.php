@@ -18,22 +18,22 @@ add_action('customize_register', 'themeslug_theme_customizer');
 function Datura_customize_register( $wp_customize ) {
 $colors = array();
 $colors[] = array(
-  'slug'=>'content_link_color', 
+  'slug'=>'content_link_color',
   'default' => '#94B203',
   'label' => __('Content Link Color', 'Datura')
 );
 $colors[] = array(
-  'slug'=>'sky_day', 
+  'slug'=>'sky_day',
   'default' => '#33A9FF',
   'label' => __('Day Sky', 'Datura')
 );
 $colors[] = array(
-  'slug'=>'sky_night', 
+  'slug'=>'sky_night',
   'default' => '#311D3C',
   'label' => __('Night Sky', 'Datura')
 );
 $colors[] = array(
-  'slug'=>'pot_color', 
+  'slug'=>'pot_color',
   'default' => '#819B00',
   'label' => __('Pot Color', 'Datura')
 );
@@ -41,16 +41,16 @@ foreach( $colors as $color ) {
   $wp_customize->add_setting(
     $color['slug'], array(
       'default' => $color['default'],
-      'type' => 'option', 
-      'capability' => 
+      'type' => 'option',
+      'capability' =>
       'edit_theme_options'
     )
   );
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
-      $color['slug'], 
-      array('label' => $color['label'], 
+      $color['slug'],
+      array('label' => $color['label'],
       'section' => 'colors',
       'settings' => $color['slug'])
     )
@@ -62,6 +62,21 @@ add_action( 'customize_register', 'Datura_customize_register' );
 
 /*Clouds Settings*/
 function Cloud_customize_register( $wp_customize ) {
+  $wp_customize->add_setting('title_size', array());
+  $wp_customize->add_control('title_size', array(
+    'label'      => __('Title Size', 'Title'),
+    'section'    => 'layout',
+    'settings'   => 'title_size',
+    'type'       => 'select',
+    'choices'    => array(
+      '36px'   => '36px',
+      '32px'   => '32px',
+      '28px'   => '28px',
+      '24px'   => '24px',
+      '21px'   => '21px'
+      '18px'   => '18px'
+    ),
+  ));
 $wp_customize->add_setting('clouds_settings', array());
 $wp_customize->add_control('clouds_settings', array(
   'label'      => __('Clouds display', 'Cloud'),
@@ -118,7 +133,7 @@ $wp_customize->add_control('darkNight_settings', array(
   ),
 ));
 $wp_customize->add_section('layout' , array(
-	'title' => __('Layout', 'Text', 'Pages', 'Cloud', 'Dark', 'DarkNight'),
+	'title' => __('Title', 'Layout', 'Text', 'Pages', 'Cloud', 'Dark', 'DarkNight'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );
@@ -275,7 +290,7 @@ if ( function_exists ('register_sidebar')) {
     ));
 }
 
-if ( function_exists ('register_sidebar')) 
+if ( function_exists ('register_sidebar'))
 	$widget_article = array(
 		'name' => __('widgets_articles'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -308,9 +323,9 @@ function day_body_class($classes = '') {
 class similar_widget extends WP_Widget {
 function __construct() {
 parent::__construct(
-'similar_widget', 
-__('Similar articles Widget', 'similar_widget_domain'), 
-array( 'description' => __( 'Show 3 similar articles with thumbnails', 'similar_widget_domain' ), ) 
+'similar_widget',
+__('Similar articles Widget', 'similar_widget_domain'),
+array( 'description' => __( 'Show 3 similar articles with thumbnails', 'similar_widget_domain' ), )
 );
 }
 public function widget( $args, $instance ) {
@@ -324,7 +339,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 					$orig_post = $post;
 					global $post;
 					$tags = wp_get_post_tags($post->ID);
-	
+
 					if ($tags) {
 						$tag_ids = array();
 						foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
@@ -334,7 +349,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 							'posts_per_page'=>3, // Number of related posts to display.
 							'caller_get_posts'=>1
 						);
-	
+
 						$my_query = new wp_query( $args );
 
 						while( $my_query->have_posts() ) {
@@ -344,7 +359,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 								<div class="roundIMG">
 									<?php the_post_thumbnail('archives-post-thumbnail',array(200,200));?>
 									<a rel="external" href="<? the_permalink()?>"><?php the_title(); ?></a>
-								</div>									
+								</div>
 							</li>
 							<? }
 						}
@@ -365,10 +380,10 @@ $title = __( 'New title', 'similar_widget_domain' );
 // Widget admin form
 ?>
 <p>
-<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 </p>
-<?php 
+<?php
 }
 // Updating widget replacing old instances with new
 public function update( $new_instance, $old_instance ) {
@@ -388,9 +403,9 @@ add_action( 'widgets_init', 'similar_load_widget' );
 class recent_widget extends WP_Widget {
 function __construct() {
 parent::__construct(
-'recent_widget', 
-__('Recent article Widget', 'recent_widget_domain'), 
-array( 'description' => __( 'Show the last article with thumbnail', 'recent_widget_domain' ), ) 
+'recent_widget',
+__('Recent article Widget', 'recent_widget_domain'),
+array( 'description' => __( 'Show the last article with thumbnail', 'recent_widget_domain' ), )
 );
 }
 public function widget( $args, $instance ) {
@@ -407,7 +422,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 			<div class="roundIMG">
 				<?php the_post_thumbnail('archives-post-thumbnail',array(200,200));?>
 				<a rel="external" href="<? the_permalink()?>"><?php the_title(); ?></a>
-			</div>									
+			</div>
 		</li>
     <?php endwhile;?>
     </ul>
@@ -424,10 +439,10 @@ $title = __( 'New title', 'recent_widget_domain' );
 // Widget admin form
 ?>
 <p>
-<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 </p>
-<?php 
+<?php
 }
 // Updating widget replacing old instances with new
 public function update( $new_instance, $old_instance ) {

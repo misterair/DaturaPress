@@ -1,8 +1,8 @@
 /*
 Theme Name: DaturaPress
 Theme URI: http://www.remitaines.com/
-Description: The most beautifull plant. Or timeline...
-Version: 0.1
+Description: Cats killer carnivore plant theme for Wordpress. It will conquer the world 2.0!
+Version: 1.2
 Author: Mister aiR
 Author URI: http://www.remitaines.com
 License: BeerWare
@@ -50,7 +50,7 @@ body#dark, body#darkNight.night{background:#333130;}
 h1,h2,h3,h4,h5{text-decoration:none}
 button{cursor: pointer;background:transparent;border:none}
 a:link,a:visited {color: #94B203;text-decoration:none;}
-
+hr{border: 0 none;height: 0.8em;background: transparent}
 
 pre{
 border:solid 1px #ccc;
@@ -207,7 +207,7 @@ min-height:30px;
 position:relative;
 margin:8px 0;
 line-height:3.2em;
-font-variant:small-caps;  
+font-variant:small-caps;
 }
 aside.feed li.priority{
 text-align:center;
@@ -304,12 +304,9 @@ content: "\f03e";
 position: absolute;
 width:238px;
 z-index:3;
-background: linear-gradient(0deg,rgba(34,34,34,0) 0%, rgba(34,34,34,1) 10%, #2e2e2e 100%) transparent;
 }
 #logo.name{
-background:#171717;
-box-shadow: 0 1px rgba(255, 255, 255, 0.08);
-min-height: 75px;
+min-height: 45px;
 margin: 0;
 overflow: hidden;
 width: 100%;
@@ -318,12 +315,22 @@ text-align:center;
 word-break: break-all;
 }
 #logo.name h1{
-margin: 8px 8px 12px 8px;
+margin: 40px 8px 12px;
 }
 #logo.name h1 a{
 font-variant: small-caps;
-color: #fff;
 text-indent: 0em;
+font-size: 36px;
+text-shadow: 0px -1px #000;
+color: #FFF;
+}
+#logo.name h1 a span {
+position: absolute;
+display: block;
+width: 100%;
+height: 15px;
+background: transparent linear-gradient(180deg, rgba(34, 34, 34, 0.45) 0%, rgba(34, 34, 34, 0.15) 100%) repeat-x scroll 0% 0%;
+bottom: 8px;
 }
 #logo.picture{
 background:transparent;
@@ -739,8 +746,8 @@ top:-35px;
 width:calc(100% + 5px);
 height:auto;
 opacity:0.75;
-filter: url(blur.svg#blur); 
--webkit-filter: blur(3px); 
+filter: url(blur.svg#blur);
+-webkit-filter: blur(3px);
 }
 
 #lightbox section.largeThumbnail{
@@ -811,8 +818,8 @@ top:-35px;
 width:calc(100% + 5px);
 height:auto;
 opacity:0.75;
-filter: url(blur.svg#blur); 
--webkit-filter: blur(3px); 
+filter: url(blur.svg#blur);
+-webkit-filter: blur(3px);
 }
 
 #lightbox.images section.largeThumbnail{
@@ -1440,8 +1447,8 @@ opacity:1;
 }
 li.relatedThumb:hover > .roundIMG > img{
 opacity:0.75;
-filter: url(blur.svg#blur); 
--webkit-filter: blur(3px); 
+filter: url(blur.svg#blur);
+-webkit-filter: blur(3px);
 }
 
 /*Sky*/
@@ -1469,11 +1476,11 @@ background-color:#0F051B;
 }
 body.day #sky{
 background: url('abstract-clouds.png') repeat-x;
-background-color: #33A9FF;
+background-color: #BD311A;
 }
 body#dark.day #sky{
 background: url('abstract-cloudsDark.png') repeat-x;
-background-color: #BD311A;
+background-color: #33A9FF;
 }
 #sky{
 background: url('abstract-clouds.png') repeat-x;

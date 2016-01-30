@@ -14,7 +14,7 @@
 			<?php else : ?>
 			<div id="logo" class="name">
       		  <h1 class='site-title'>
-      		  	<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a>
+      		  	<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?><span></span></a>
     		  </h1>
     		</div>
 			<?php endif; ?>
