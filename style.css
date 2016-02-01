@@ -1,8 +1,8 @@
 /*
-Theme Name: DaturaPress
+Theme Name: DaturaPress Beta
 Theme URI: http://www.remitaines.com/
 Description: Cats killer carnivore plant theme for Wordpress. It will conquer the world 2.0!
-Version: 1.2
+Version: 1.2.1
 Author: Mister aiR
 Author URI: http://www.remitaines.com
 License: BeerWare
@@ -52,7 +52,9 @@ button{cursor: pointer;background:transparent;border:none}
 a:link,a:visited {color: #94B203;text-decoration:none;}
 hr{border: 0 none;height: 0.8em;background: transparent}
 
-pre{
+pre, code{
+ direction: ltr;
+ white-space: pre;
 border:solid 1px #ccc;
 border-radius: 4px;
 background: #DCD6CD;
@@ -74,15 +76,15 @@ background: #DCD6CD;
 text-shadow: 0 1px rgba(255,255,255,0.08);
 }
 input, textarea{
-border: 1px solid #aaa;
-box-shadow: 0px 1px #fff,0 2px 2px #ccc inset;
-border-radius: 4px;
-color: #222;
-background: #DCD6CD;
-min-height: 2em;
-cursor: pointer;
-text-shadow: 0 1px #fff;
-transition-duration: 0.15s
+ border: 1px solid #bbb;
+ box-shadow: 0px 1px #fff, 0 1px rgba(255,255,255,0.25) inset;
+ border-radius: 6px;
+ color: #222;
+ background: #DCD6CD;
+ min-height: 2em;
+ cursor: pointer;
+ text-shadow: 0 1px #fff;
+ transition-duration: 0.15s
 }
 #commentform input, #commentform textarea{
 background: #DCD6CD !important;
@@ -148,18 +150,18 @@ width:240px;
 z-index:12;
 }
 
-aside{
-background:#222;
-height: 100%;
-overflow: hidden;
-position: fixed;
-width: 240px;
-box-shadow: -2px 0 2px #0F0F0F inset, 1px 0 rgba(255, 255, 255, 0.08);
-text-shadow: 1px 1px #111111;
-color:#eee;
-transition:0.25s;
-top: 0;
-left: 0;
+aside {
+ background:#222;
+ height: 100%;
+ overflow: hidden;
+ position: fixed;
+ width: 240px;
+ box-shadow: -2px 0 2px #0F0F0F inset, 1px 0 rgba(255, 255, 255, 0.08);
+ text-shadow:0 -1px #000, 0 1px rgba(255,255,255,0.18);
+ color:#eee;
+ transition:0.25s;
+ top: 0;
+ left: 0;
 }
 #panel_contener {
 height: 100%;
@@ -170,7 +172,8 @@ overflow-x: hidden;
 overflow-y: auto;
 }
 #panel_contener .widget{
-padding: 0 12px
+ padding: 0 12px;
+ margin-bottom: -18px;
 }
 aside ul, aside ul li{
 padding-left:0;
@@ -180,8 +183,11 @@ padding-bottom: 1em;
 line-height: 1.2em;
 }
 aside ul li a{
-text-indent: 0em;
-margin-left: -0.2em;
+ text-indent: 0em;
+ margin-left: -0.2em;
+}
+aside ul li a:link, aside ul li a:visited{
+ color:#fff;
 }
 
 /*Aside feed*/
@@ -301,9 +307,10 @@ content: "\f03e";
 
 /*Logo*/
 #panel_contener header{
-position: absolute;
-width:238px;
-z-index:3;
+ background: #222;
+ position: absolute;
+ width:238px;
+ z-index:3;
 }
 #logo.name{
 min-height: 45px;
@@ -315,13 +322,13 @@ text-align:center;
 word-break: break-all;
 }
 #logo.name h1{
-margin: 40px 8px 12px;
+margin: 24px 8px 12px;
 }
 #logo.name h1 a{
 font-variant: small-caps;
 text-indent: 0em;
 font-size: 36px;
-text-shadow: 0px -1px #000;
+text-shadow: 0px -1px #000, 0 1px rgba(255,255,255,0.18);
 color: #FFF;
 }
 #logo.name h1 a span {
@@ -476,7 +483,7 @@ display:none;
 #panel_0,#panel_1,#panel_2,#panel_3,#panel_4{
 transition:0.25s;
 overflow:hidden;
-margin-top:120px;
+margin-top:66px;
 margin-bottom:45px;
 }
 
@@ -612,7 +619,6 @@ content:"\f09e";
 input.search-field{
 background:transparent;
 border:none;
-border-bottom:solid 1px #fff;
 color: #fff;
 font-size: 1.06em;
 width: 170px;
@@ -623,6 +629,9 @@ box-shadow: none;
 border-radius: 0;
 text-shadow: 0 1px #171717;
 min-height: 0;
+}
+input.search-field:placeholder,input.search-field:-webkit-input-placeholder{
+color: #fff;
 }
 input.search-submit{
 font-family: "FontAwesome";
@@ -698,7 +707,7 @@ section.odd:after{
 right: -8px;
 }
 section.even:after{
-left: -18px;
+left: -17px;
 }
 
 section > ul{
@@ -729,6 +738,7 @@ padding:0;
 margin:0;
 box-shadow:none;
 border-radius: 0;
+border: 0 none;
 }
 
 #lightbox section.blurThumbnail{
@@ -756,14 +766,23 @@ border: none;
 border-bottom: 1px solid #aaa;
 }
 body#dark #lightbox section.largeThumbnail, body#darkNight.night #lightbox section.largeThumbnail{background:transparent;}
-#lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
-border:solid 8px #fff;
-box-shadow:0 0 4px rgba(0,0,0,0.35);
-margin: 8px auto;
-max-height: 278px;
-width:auto;
+#lightbox section.largeThumbnail > .ArticleThumb{
+ width: auto;
+ max-height: 335px;
+ border: 10px solid #222;
+ border-radius: 8px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.55);
+ margin: 8px auto -14px;
+ z-index: 2;
+ max-width: 550px;
+ position: relative;
 }
-body#dark #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail, body#darkNight.night #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{border:solid 8px #171717;}
+#lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
+ width: auto;
+ max-height: 335px;
+ border: 0 none;
+}
+body#dark #lightbox section.largeThumbnail > .ArticleThumb, body#darkNight.night #lightbox section.largeThumbnail > .ArticleThumb{border:solid 8px #171717;}
 
 /*Image.php*/
 body.single-attachment article{ margin-left: 0;}
@@ -1078,18 +1097,34 @@ width: auto;
 margin: 0 22px 14px 22px;
 }
 section h1{
-position:relative;
-text-align:center;
-z-index:4
+  position: absolute;
+  text-align: center;
+  z-index: 4;
+  display: block;
+  left: 0px;
+  width: 100%;
+  bottom: 4px;
 }
 #lightbox section:after{
-display:none;
+  display:none;
 }
 #lightbox section h1 {
-font-variant: small-caps;
-font-size:2.2em;
+  font-variant: small-caps;
+  font-size:1.48em;
 }
-section h1 a:link, section h1 a:visited{color: #222;}
+section h1 a:link, section h1 a:visited{
+ line-height: 1.9em;
+ text-shadow: 0px -1px #000, 0px 1px rgba(255, 255, 255, 0.18);
+ color: #FFF;
+ box-shadow: 0px -4px 18px #FFF, 0px 0px 1px #000;
+ background: rgba(34, 34, 34, 0.94) none repeat scroll 0% 0%;
+ padding: 0px 6px 2px;
+ border-radius: 4px;
+ max-width: calc(100% - 36px);
+ display: inline-flex;
+ text-indent: 0em;
+ margin-left: -10px;
+}
 body#dark section h1 a:link, section h1 a:visited, body#darkNight.night section h1 a:link, section h1 a:visited{color: #ddd;}
 .infos{
 text-align: center;
@@ -1100,19 +1135,15 @@ width: 100%;
 }
 
 .infos.date{
-margin-bottom:8px;
-color:#444;
-z-index:2;
+ margin-bottom: 8px;
+ margin-top: -10px;
+ color: #444;
+ z-index: 2;
+ box-shadow: 0px 1px rgb(204, 204, 204), 0px 2px rgb(255, 255, 255);
 }
 body#dark .infos.date, body#darkNight.night .infos.date{
 color:#eee;
 text-shadow: 0px 1px rgba(255,255,255,0.08);
-}
-.infos.date p:before, .infos.date p:after{
-font-family: "FontAwesome";
-content:"\f141";
-margin: 0 8px;
-font-style: normal;
 }
 .tags{
 margin:0;
@@ -1167,38 +1198,6 @@ margin-right: 0.2em;
 font-size: 1.1em;
 }
 body#dark .infos.tags a[rel='category tag']:before, body#darkNight.night .infos.tags a[rel='category tag']:before{color:#eee}
-
-/*Bubble Comments*/
-.Picture:hover > .bubbleComments{
-opacity:1
-}
-.bubbleComments{
-opacity:0;
-position: absolute;
-left: 5px;
-top: 10px;
-color: #eee;
-z-index: 2;
-text-align: center;
-width: 35px;
-line-height: 16px;
-font-size: 12px;
-text-indent: 0;
-text-shadow: 0 1px rgba(0,0,0,0.05);
-transition:0.25s;
-}
-.bubbleComments:before{
-font-family: "FontAwesome";
-content:"\f075";
-font-size: 32px;
-color: #222;
-position: absolute;
-display: block;
-top: 0px;
-left: 2px;
-z-index: -1;
-text-shadow: 0 1px rgba(255,255,255,0.08);
-}
 
 /*Pictures*/
 section.fluxPicture > ul{
@@ -1270,14 +1269,12 @@ margin-right: 4px;
 background:#D2CCC1;
 height:100%;
 }
-#lightbox section{
+#lightbox section {
 overflow:hidden;
 margin:0;
 width:100%;
 background:#F7F6F4;
-border-top: solid 1px rgba(15,15,15,0.2);
-border-bottom: solid 1px rgba(15,15,15,0.2);
-box-shadow:0 2px 2px rgba(15,15,15,0.28),0 -2px 2px rgba(15,15,15,0.28);
+box-shadow:0 1px #fff, 0 -5px 4px rgba(15,15,15,0.28);
 }
 body#dark #lightbox section, body#darkNight.night #lightbox section{
 background:#222;
@@ -1507,38 +1504,53 @@ height: 100%;
 top: 0;
 margin-left: 3px;
 width: 10px;
-box-shadow:-2px 1px 2px #000 inset, 1px 0 rgba(255, 255, 255, 0.08);
+box-shadow:-1x 1px  #131313 inset, 1px 0px #fff;
 }
 body#dark .tronc, body#darkNight.night .tronc{background:#171717;}
 
 /*Pot*/
 #pot{
-width:160px;
-position:relative;
-height:150px;
-margin: 0 auto -15px;
+ width:160px;
+ position:relative;
+ height:150px;
+ margin: 0 auto -12px;
 }
 .potTop{
-z-index:2;
-position:relative;
-width:100%;
-height:25px;
-background-color: #819B00;
-background-image:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 82%, transparent 100%);
-background-image:-webkit-linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.25) 82%, transparent 100%);
-box-shadow: 0px 1px rgba(0,0,0,0.3);
+ z-index:2;
+ position:relative;
+ width:100%;
+ height:25px;
+ background-color: #D2CCC1;
+ background-image:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.65) 82%, transparent 100%);
+ background-image:-webkit-linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.65) 82%, transparent 100%);
+ box-shadow: 0px 1px #fff inset;
+ border: 2px solid #222;
 }
 .potBottom{
-z-index:1;
-position:relative;
-background-color: #819B00;
-height: 0;
-margin-left: 10px;
-width: 90px;
-border:25px solid;
-border-top-width:125px;
-border-bottom:none;
-border-color:transparent #D2CCC1;
+ z-index:1;
+ position:relative;
+ background-color: #D2CCC1;
+ height: 0;
+ margin-left: 12px;
+ width: 90px;
+ border:25px solid;
+ border-top-width:125px;
+ border-bottom:none;
+ border-color:transparent #252525;
+}
+.potBottom_bis{
+ z-index:1;
+ position:relative;
+ background-color: transparent;
+ box-shadow: 0px 1px #fff inset;
+ height: 0;
+ margin-left: -27px;
+ margin-top:  -126px;
+ width: 94px;
+ border:25px solid;
+ border-top-width:125px;
+ border-bottom:none;
+ border-color:transparent #D2CCC1;
 }
 body#dark .potBottom, body#darkNight.night .potBottom{
 border:25px solid;
@@ -1560,11 +1572,12 @@ text-shadow:1px 1px rgba(255, 255, 255, 0.15), 0 0 1px #0F0F0F;
 }
 
 /*Commentaire*/
-#lightbox section.comments{
-background:#DCD6CD;
+#lightbox section.comments {
+ background:rgba(220, 214, 205, 0.75);
+ box-shadow: 0px -1px #bbb, 0px 3px 4px rgba(15, 15, 15, 0.28) inset;
 }
-body#dark #lightbox section.comments, body#darkNight.night #lightbox section.comments{
-background:#333130;
+body#dark #lightbox section.comments, body#darkNight.night #lightbox section.comments {
+ background:rgba(220, 214, 205, 0.75);
 }
 #lightbox section .commentArea {
 background:transparent;
@@ -1597,23 +1610,25 @@ box-shadow:0 1px #fff;
 width:55px;
 height:55px;
 margin: 0 auto;
+border: 1px solid #bbb;
+border-radius: 55px;
 }
 body#dark #lightbox section.comments .comment-gravatar img, body#darkNight.night #lightbox section.comments .comment-gravatar img{
 box-shadow:0 1px rgba(255,255,255,0.08);
 border: 1px solid #171717;
 }
-.commentArea  >.commentmetadata{
-background: #F7F6F4;
-border-radius: 12px;
-margin: 8px 24px 0px 74px;
-padding: 8px 0px;
-box-shadow: 0px 1px 3px #aaa;
-display: inline-block;
-position:relative;
+.commentArea  > .commentmetadata{
+ background: #F7F6F4;
+ border-radius: 12px;
+ margin: 8px 24px 0px 74px;
+ padding: 8px 0px;
+ box-shadow: 0 0 1px 1px #bbb, 0 1px #fff inset;
+ display: inline-block;
+ position:relative;
 }
 body#dark .commentArea  >.commentmetadata, body#darkNight.night .commentArea  >.commentmetadata{
-background:#222;
-box-shadow: 0 1px 3px #000;
+ background:#222;
+ box-shadow: 0 0 1px 1px #000, 0 1px rgba(255,255,255,0.18) inset;
 }
 .commentmetadata:before{
 font-family: "FontAwesome";
@@ -1650,26 +1665,26 @@ float: right;
 .authorstyle p{margin: 6px 74px 6px 44px;}
 
 .commentsZone{
-background: #F7F6F4;
-display: inline-block;
-width: 100%;
-margin: 0px;
-box-shadow: 2px -2px 3px #aaa;
+ background: #F7F6F4;
+ display: inline-block;
+ width: 100%;
+ margin: 0px;
+ box-shadow:0 -1px #fff, 0 -2px #bbb;
 }
 body#dark .commentsZone, body#darkNight.night .commentsZone{
 background:#222;
 box-shadow: 2px -2px 3px #000;
 }
 .commentsZone:before{
-font-family: "FontAwesome";
-font-size: 40px;
-content:"\f0d8";
-display: block;
-position: relative;
-left: 25px;
-text-shadow: 0px -2px #AAA;
-top: -17px;
-color: #F7F6F4;
+ font-family: "FontAwesome";
+ font-size: 40px;
+ content:"\f0d8";
+ display: block;
+ position: relative;
+ left: 25px;
+ text-shadow: 0px -2px #bbb;
+ top: -17px;
+ color: #F7F6F4;
 }
 body#dark .commentsZone:before, body#darkNight.night .commentsZone:before{
 text-shadow: 0px -2px #000;
@@ -1920,9 +1935,13 @@ border-radius: 14px 0 0 14px;
 }
 @media (max-width:560px) {
 #lightbox section.blurThumbnail {display:none}
+#lightbox section.largeThumbnail > .ArticleThumb{
+ border: 0 none;
+ border-radius:0;
+ box-shadow: none);
+ margin: 0 auto;
+}
 #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail {
-border: none;
-box-shadow: none;
 margin: 0 auto;
 max-height: 100%;
 height:auto;

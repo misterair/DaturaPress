@@ -274,27 +274,26 @@ add_filter( 'avatar_defaults', 'newgravatar' );
 }
 
 if ( function_exists('register_sidebar'))
-    $widgetWrap = array(
-        'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
+    $sidebar_home = array(
+      'name' => __('Sidebar de la home'),
+      'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
     );
-    register_sidebars(2, $widgetWrap);
+    register_sidebars(1, $sidebar_home);
 
-
-if ( function_exists ('register_sidebar')) {
-    register_sidebar ('article');
-    register_sidebar(array(
-		'name' => 'sidebar_articles',
-        'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-    ));
-}
+if ( function_exists('register_sidebar'))
+    $sidebar_articles = array(
+      'name' => __('Sidebar des articles'),
+      'before_widget' => '<div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
+      'after_widget' => '</div>',
+    );
+    register_sidebars(1, $sidebar_articles);
 
 if ( function_exists ('register_sidebar'))
 	$widget_article = array(
-		'name' => __('widgets_articles'),
+		'name' => __('Widgets du corps des articles'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
+  'after_widget' => '</div>',
 	);
 	register_sidebars(1, $widget_article );
 

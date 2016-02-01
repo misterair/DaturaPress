@@ -11,21 +11,20 @@
 		</div>
 	</section>
 	<section class="largeThumbnail">
-		<?php the_post_thumbnail( '404-post-thumbnail' ); ?>
+		<div class="ArticleThumb">
+			<?php the_post_thumbnail( '404-post-thumbnail' ); ?>
+			<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+		</div>
 	</section>
 	<section class="content">
 		<div class="infos date">
-			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?></p>
-			<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?>. <?php comments_number( 'Aucun Commentaire', 'Un commentaire', '% commentaires' ); ?></p>
 		</div>
 		<div class="sectionCentrage <?php echo get_theme_mod( 'text_settings', 'text_settings' ); ?>">
-			<div id="clear"></div>
 	        <?php the_content(); ?>
-	        <div id="clear"></div>
 	    	<?php if ( function_exists ( dynamic_sidebar(5) ) ) : ?>
-				<?php dynamic_sidebar (5); ?>
+				<?php dynamic_sidebar (3); ?>
 			<?php endif; ?>
-			<div id="clear"></div>
 	    </div>
 	    <div class="infos tags">
 			<?php the_category(' ') ?>
@@ -42,12 +41,10 @@
 		<a class="readAction" href="#"></a>
 		<?php next_post_link('%link', '<div class="previousArticle"></div>'); ?>
 	</div>
-    
+
 </div>
-    
+
 <?php endwhile; ?>
 <?php endif; ?>
 </article>
 <?php get_footer(); ?>
-
-	

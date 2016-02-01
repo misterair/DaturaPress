@@ -1,7 +1,7 @@
-## DaturaPress 1.1
+## DaturaPress 1.2.1 dev version.
 
 # *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
-
+---
 
 ![](https://github.com/misterair/DaturaPress/blob/master/screenshot.png)
 ----
@@ -32,9 +32,5 @@ Un jour, si tout va bien:
 * LazyLoad (aide bienvenue);
 * [insert idea here]
 
-
+---
 *Crédit: [Wordpress.com emoticons](http://jannekevandorpe.com/2014/03/19/secret-new-wordpress-smileys/) (License: GPLv2 or later)*
-
-
-
-
