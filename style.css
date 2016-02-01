@@ -322,14 +322,16 @@ text-align:center;
 word-break: break-all;
 }
 #logo.name h1{
-margin: 24px 8px 12px;
+ margin: 24px 8px 12px;
 }
 #logo.name h1 a{
-font-variant: small-caps;
-text-indent: 0em;
-font-size: 36px;
-text-shadow: 0px -1px #000, 0 1px rgba(255,255,255,0.18);
-color: #FFF;
+ font-variant: small-caps;
+ text-indent: 0em;
+ font-size: 36px;
+ text-shadow: 0px -1px #000, 0 1px rgba(255,255,255,0.18);
+ color: #FFF;
+ -webkit-animation: logo 2.8s linear forwards;
+ animation: logo 2.8s linear forwards;
 }
 #logo.name h1 a span {
 position: absolute;
@@ -739,6 +741,8 @@ margin:0;
 box-shadow:none;
 border-radius: 0;
 border: 0 none;
+width: 100%;
+height: auto;
 }
 
 #lightbox section.blurThumbnail{
@@ -961,21 +965,27 @@ content:"\f068";
 
 /*Corners date*/
 section ul #corner:hover p.cornerInfos{
-display: block;
+height: auto;
+width: auto;
+min-width: 17em;
+opacity: 1;
 }
 section ul #corner p.cornerInfos{
-display: none;
-background: #222;
+background: rgba(34, 34, 34, 0.94);
 color:#fff;
 box-shadow: 0 1px 2px rgba(0,0,0,0.55);
 border-radius: 4px;
 position:absolute;
-min-width: 17em;
-bottom: 0px;
+height: 0;
+width: 0;
+opacity: 0;
+overflow: hidden;
+bottom: -32px;
 text-shadow: 0 1px rgba(255,255,255,0.08);
 text-align:center;
 padding: 4px;
 text-indent: 0;
+transition-duration: 0.35s;
 }
 body#dark section ul #corner p.cornerInfos, body#darkNight.night section ul #corner p.cornerInfos{
 background:#171717;
@@ -1222,6 +1232,10 @@ float:left;
 width: 100%;
 height:auto;
 margin:0;
+ transition:0.25s;
+}
+.Picture:hover img{
+ transform: scale(1.25);
 }
 .gradient:before {
 left: 5px;
@@ -1730,7 +1744,7 @@ input[value="Envoyer"]:hover {
 /*Navigation*/
 nav.navigation {
 text-align: center;
-background: none repeat scroll 0% 0% rgb(23, 23, 23);
+background: #222;
 height: 40px;
 box-shadow: 0px 2px 2px #111 inset;
 position: relative;
@@ -1742,22 +1756,20 @@ line-height: 20px;
 margin: 5px auto 0;
 }
 nav.navigation ul li.active {
-padding: 4px;
-text-indent: 0em;
-width: 20px;
-height: 20px;
-border-radius: 20px;
-background: #eee;
-display: inline-block;
+ padding: 4px;
+ text-indent: 0em;
+ display: inline-block;
 }
 nav.navigation ul li.active a{
-font-weight: bold;
-text-shadow: none;
-color:#000;
+ font-weight: bold;
+ text-shadow: 0 0 1px #000, 0 0 5px #fff;
+ color: #fff;
+ font-size: 1.85em;;
 }
 nav.navigation a{
-color:#eee;
+color:#ccc;
 transition-duration: 0.15s;
+text-shadow: 0 -1px #000, 0 1px rgba(255,255,255,0.18);
 }
 
 .arrowNext a, .arrowPrevious a{

@@ -1,19 +1,4 @@
 <?php
-function themeslug_theme_customizer( $wp_customize ) {
-$wp_customize->add_section( 'themeslug_logo_section' , array(
-    'title'       => __( 'Logo', 'themeslug' ),
-    'priority'    => 30,
-    'description' => 'Upload a logo to replace the default site name and description in the header',
-) );
-$wp_customize->add_setting( 'themeslug_logo' );
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-    'label'    => __( 'Logo', 'themeslug' ),
-    'section'  => 'themeslug_logo_section',
-    'settings' => 'themeslug_logo',
-) ) );
-}
-add_action('customize_register', 'themeslug_theme_customizer');
-
 /*Colors Custom*/
 function Datura_customize_register( $wp_customize ) {
 $colors = array();
@@ -77,17 +62,6 @@ function Cloud_customize_register( $wp_customize ) {
       '18px'   => '18px',
     ),
   ));
-$wp_customize->add_setting('clouds_settings', array());
-$wp_customize->add_control('clouds_settings', array(
-  'label'      => __('Clouds display', 'Cloud'),
-  'section'    => 'layout',
-  'settings'   => 'clouds_settings',
-  'type'       => 'radio',
-  'choices'    => array(
-    'block'   => 'yes',
-    'none'  => 'no',
-  ),
-));
 $wp_customize->add_setting('text_settings', array());
 $wp_customize->add_control('text_settings', array(
   'label'      => __('Text display', 'Text'),
@@ -121,19 +95,8 @@ $wp_customize->add_control('dark_settings', array(
     'dark'  => 'Dark Theme',
   ),
 ));
-$wp_customize->add_setting('darkNight_settings', array());
-$wp_customize->add_control('darkNight_settings', array(
-  'label'      => __('DarkNight Theme', 'DarkNight'),
-  'section'    => 'layout',
-  'settings'   => 'darkNight_settings',
-  'type'       => 'radio',
-  'choices'    => array(
-    ''   => 'Normal night theme',
-    'darkNight'  => 'Dark night theme',
-  ),
-));
 $wp_customize->add_section('layout' , array(
-	'title' => __('Title', 'Layout', 'Text', 'Pages', 'Cloud', 'Dark', 'DarkNight'),
+	'title' => __('Title', 'Layout', 'Text', 'Pages', 'Dark'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );

@@ -11,21 +11,20 @@
 		</div>
 	</section>
 	<section class="largeThumbnail">
-		<?php the_post_thumbnail( '404-post-thumbnail' ); ?>
+		<div class="ArticleThumb">
+			<?php the_post_thumbnail( '404-post-thumbnail' ); ?>
+			<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+		</div>
 	</section>
 	<section class="content">
 		<div class="sectionCentrage  <?php echo get_theme_mod( 'pages_settings', 'pages_settings' ); ?>">
-			<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-			<div id="clear"></div>
-	        <?php the_content(); ?>
-	        <div id="clear"></div>
-	    </div>
+	   <?php the_content(); ?>
+	   <div id="clear"></div>
+	 </div>
 	</section>
 </div>
-    
+
 <?php endwhile; ?>
 <?php endif; ?>
 </article>
 <?php get_footer(); ?>
-
-	
