@@ -7,21 +7,6 @@ $colors[] = array(
   'default' => '#94B203',
   'label' => __('Content Link Color', 'Datura')
 );
-$colors[] = array(
-  'slug'=>'sky_day',
-  'default' => '#33A9FF',
-  'label' => __('Day Sky', 'Datura')
-);
-$colors[] = array(
-  'slug'=>'sky_night',
-  'default' => '#311D3C',
-  'label' => __('Night Sky', 'Datura')
-);
-$colors[] = array(
-  'slug'=>'pot_color',
-  'default' => '#819B00',
-  'label' => __('Pot Color', 'Datura')
-);
 foreach( $colors as $color ) {
   $wp_customize->add_setting(
     $color['slug'], array(
@@ -49,7 +34,7 @@ add_action( 'customize_register', 'Datura_customize_register' );
 function Cloud_customize_register( $wp_customize ) {
   $wp_customize->add_setting('title_size', array());
   $wp_customize->add_control('title_size', array(
-    'label'      => __('Title Size', 'Title'),
+    'label'      => __('Taille du titre du blog', 'Title'),
     'section'    => 'layout',
     'settings'   => 'title_size',
     'type'       => 'select',
@@ -64,7 +49,7 @@ function Cloud_customize_register( $wp_customize ) {
   ));
 $wp_customize->add_setting('text_settings', array());
 $wp_customize->add_control('text_settings', array(
-  'label'      => __('Text display', 'Text'),
+  'label'      => __('Mise en forme texte articles', 'Text'),
   'section'    => 'layout',
   'settings'   => 'text_settings',
   'type'       => 'radio',
@@ -75,7 +60,7 @@ $wp_customize->add_control('text_settings', array(
 ));
 $wp_customize->add_setting('pages_settings', array());
 $wp_customize->add_control('pages_settings', array(
-  'label'      => __('Pages display', 'Text'),
+  'label'      => __('Mise en forme texte pages', 'Text'),
   'section'    => 'layout',
   'settings'   => 'pages_settings',
   'type'       => 'radio',
@@ -86,17 +71,18 @@ $wp_customize->add_control('pages_settings', array(
 ));
 $wp_customize->add_setting('dark_settings', array());
 $wp_customize->add_control('dark_settings', array(
-  'label'      => __('Dark Theme', 'Dark'),
+  'label'      => __('Couleurs thème', 'Dark'),
   'section'    => 'layout',
   'settings'   => 'dark_settings',
   'type'       => 'radio',
   'choices'    => array(
-    ''   => 'Normal Theme',
-    'dark'  => 'Dark Theme',
+    ''   => 'Thème Clair (défaut)',
+    'dark'  => 'Thème Sombre',
+    'darkNight' => 'Thème Sombre la nuit uniquement',
   ),
 ));
 $wp_customize->add_section('layout' , array(
-	'title' => __('Title', 'Layout', 'Text', 'Pages', 'Dark'),
+	'title' => __( 'Paramètres', 'Title', 'Text', 'Pages', 'Dark'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );

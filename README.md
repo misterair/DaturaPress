@@ -1,4 +1,4 @@
-## DaturaPress 1.2.1 dev version.
+## DaturaPress 1.2.2 dev/Nightly version.
 
 # *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
 ---
