@@ -3,9 +3,24 @@
 function Datura_customize_register( $wp_customize ) {
 $colors = array();
 $colors[] = array(
-  'slug'=>'content_link_color',
+  'slug'=>'blog_color',
   'default' => '#94B203',
-  'label' => __('Content Link Color', 'Datura')
+  'label' => __('Titre de Blog', 'blog_color')
+);
+$colors[] = array(
+  'slug'=>'link_color',
+  'default' => '#94B203',
+  'label' => __('Liens', 'link_color')
+);
+$colors[] = array(
+  'slug'=>'code_bloc_color',
+  'default' => '#DCD6CD',
+  'label' => __('Bloc code', 'code_bloc_color')
+);
+$colors[] = array(
+  'slug'=>'code_font_color',
+  'default' => '#222',
+  'label' => __('Bloc code police', 'code_font_color')
 );
 foreach( $colors as $color ) {
   $wp_customize->add_setting(
@@ -49,25 +64,17 @@ function Cloud_customize_register( $wp_customize ) {
   ));
 $wp_customize->add_setting('text_settings', array());
 $wp_customize->add_control('text_settings', array(
-  'label'      => __('Mise en forme texte articles', 'Text'),
+  'label'      => __('Texte articles multi-colonnes/journal'),
   'section'    => 'layout',
   'settings'   => 'text_settings',
-  'type'       => 'radio',
-  'choices'    => array(
-    ''   => 'Normal',
-    'journal'  => 'Journal',
-  ),
+  'type'       => 'checkbox',
 ));
 $wp_customize->add_setting('pages_settings', array());
 $wp_customize->add_control('pages_settings', array(
-  'label'      => __('Mise en forme texte pages', 'Text'),
+  'label'      => __('Texte pages multi-colonnes/journal'),
   'section'    => 'layout',
   'settings'   => 'pages_settings',
-  'type'       => 'radio',
-  'choices'    => array(
-    ''   => 'Normal',
-    'journal'  => 'Journal',
-  ),
+  'type'       => 'checkbox',
 ));
 $wp_customize->add_setting('dark_settings', array());
 $wp_customize->add_control('dark_settings', array(

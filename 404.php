@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
- 
- 	
- 
+
+
+
 	<title><?php bloginfo('name') ?><?php if ( is_404() ) : ?> &raquo; <?php _e('Not Found') ?><?php elseif ( is_home() ) : ?> &raquo; <?php bloginfo('description') ?><?php else : ?><?php wp_title() ?><?php endif ?></title>
  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  	<meta name="HandheldFriendly" content="true">
@@ -12,7 +12,7 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /><?php wp_head(); ?>
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-	<link rel="alternate" type="application/atom+xml" title="Atom" href="<?php bloginfo('atom_url'); ?>" />	
+	<link rel="alternate" type="application/atom+xml" title="Atom" href="<?php bloginfo('atom_url'); ?>" />
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
 	<!--[if lt IE 9]>
 			<script src="<?php bloginfo('template_url'); ?>/js/html5shiv.js"></script>
@@ -389,7 +389,7 @@ z-index:2;
 position:relative;
 width:100%;
 height:25px;
-background-color: #819B00;
+background-color: #D00;
 background-image:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 82%, transparent 100%);
 background-image:-webkit-linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.25) 82%, transparent 100%);
 box-shadow: 0px 1px rgba(0,0,0,0.3);
@@ -411,7 +411,7 @@ content:"\f015";
 .potBottom{
 z-index:1;
 position:relative;
-background-color: #819B00;
+background-color: #D00;
 height: 0;
 margin-left: calc(-50% + 10px);
 width: 90px;
@@ -460,9 +460,9 @@ animation-name: pot;
 
 
 <div id="wrap">
-	
+
 	<article id="article">
-		
+
 		<div id="tronc">
 			<div class="tronc"></div>
 		</div>
@@ -482,16 +482,16 @@ animation-name: pot;
 				<li><div class="drop"></div></li>
 			</ul>
 		</header>
-		
-		<div class="article_contener">		
+
+		<div class="article_contener">
 			<section>
 				<ul></ul>
 			</section>
-		
+
 			<section>
 				<ul></ul>
 			</section>
-		
+
 			<section>
 				<ul></ul>
 			</section>
@@ -506,9 +506,9 @@ animation-name: pot;
 			</nav>
 
 		</div>
-		
+
 	</article>
-	
+
 </div>
 <script type="text/javascript">
   <!--
@@ -516,9 +516,4 @@ setTimeout("location.href = '<?php echo home_url( "/" ); ?>';",25000);
 -->
   </script>
 </body>
-<?php  $pot_color = get_option('pot_color');?>
-<style>
-.potBottom{background-color: <?php echo $pot_color; ?>; }
-.potTop{background-color:<?php echo $pot_color; ?>; }
-</style>
 </html>

@@ -17,7 +17,7 @@
 		</div>
 	</section>
 	<section class="content">
-		<div class="sectionCentrage  <?php echo get_theme_mod( 'pages_settings', 'pages_settings' ); ?>">
+		<div class="sectionCentrage  j<?php echo get_theme_mod('pages_settings' ); ?>">
 	   <?php the_content(); ?>
 	   <div id="clear"></div>
 	 </div>

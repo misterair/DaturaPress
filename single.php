@@ -20,7 +20,7 @@
 		<div class="infos date">
 			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?>. <?php comments_number( 'Aucun Commentaire', 'Un commentaire', '% commentaires' ); ?></p>
 		</div>
-		<div class="sectionCentrage <?php echo get_theme_mod( 'text_settings', 'text_settings' ); ?>">
+		<div class="sectionCentrage j<?php echo get_theme_mod( 'text_settings'); ?>">
 	        <?php the_content(); ?>
 	    	<?php if ( function_exists ( dynamic_sidebar(5) ) ) : ?>
 				<?php dynamic_sidebar (3); ?>
