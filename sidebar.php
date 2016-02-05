@@ -18,6 +18,7 @@
       		  </h1>
       		</div>
 			<?php endif; ?>
+			<div id="separator"><div class="separator"></div></div>
 		</header>
 
 			<div id="panel_1">

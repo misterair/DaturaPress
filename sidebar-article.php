@@ -18,10 +18,10 @@
     		  </h1>
     		</div>
 			<?php endif; ?>
+			<div id="separator"><div class="separator"></div></div>
 		</header>
 
 			<div id="panel_1">
-				<div id="separator"><div class="separator"></div></div>
 					<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 					<input type="submit" class="search-submit" value="" />
 					<label>
@@ -35,8 +35,8 @@
 				<div id="separator"><div class="separator"></div></div>
 			</div>
 
-			<div id="tabGradient" class="reading"></div>
 			<div id="tab" class="read">
+				<div id="separator"><div class="separator"></div></div>
 				<?php previous_post_link('%link', '<div class="previousArticle"></div>'); ?>
 				<a class="readAction" href="#"></a>
 				<?php next_post_link('%link', '<div class="previousArticle"></div>'); ?>

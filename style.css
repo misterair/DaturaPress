@@ -1,12 +1,13 @@
 /*
-Theme Name: DaturaPress Beta
+Theme Name: DaturaPress
 Theme URI: http://www.remitaines.com/
 Description: Cats killer carnivore plant theme for Wordpress. It will conquer the world 2.0!
-Version: 1.2.1
+Version: 2.0 beta 1
 Author: Mister aiR
 Author URI: http://www.remitaines.com
 License: BeerWare
 */
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('fonts/fontawesome-webfont.eot?v=4.3.0');
@@ -101,7 +102,7 @@ color:#222
 body#dark #commentform input, body#dark #commentform textarea, body#darkNight.night #commentform input, body#darkNight.night #commentform textarea{
 background: #222 !important;
 color:#ccc;
-box-shadow: 0px 1px #333, 0px 2px 2px #111 inset;
+box-shadow: 0px 1px #333, 0px 1px #333 inset;
 border: 1px solid #111;
 }
 .screen-reader-text{display:none}
@@ -163,7 +164,7 @@ aside {
  overflow: hidden;
  position: fixed;
  width: 240px;
- box-shadow: -2px 0 2px #0F0F0F inset, 1px 0 rgba(255, 255, 255, 0.08);
+ box-shadow: -1px 0 #0F0F0F inset, 1px 0 rgba(255, 255, 255, 0.08);
  text-shadow:0 -1px #000, 0 1px rgba(255,255,255,0.18);
  color:#eee;
  transition:0.25s;
@@ -378,14 +379,13 @@ aside.settings #tabGradient{
 bottom: 0;
 }
 
-#tab{
-background: #171717;
-bottom: 0;
-left:0;
-box-shadow: 0 2px 2px #111 inset;
-height: 40px;
-position: absolute;
-width: 240px;
+#tab {
+ background: #222;
+ bottom: 0;
+ left:0;
+ height: 40px;
+ position: absolute;
+ width: 240px;
 }
 .tab_1,.tab_2,.tab_3{
 background:transparent;
@@ -431,9 +431,6 @@ font-weight: lighter;
 /*Reading*/
 #tab.read a:link, a:visited{
 color:#fff;
-}
-#tab.read.bis{
-display:none;
 }
 a.readAction, a[rel="prev"], a[rel="next"], div.prev, div.next{
 font-family: "FontAwesome";
@@ -1780,8 +1777,9 @@ nav.navigation {
 text-align: center;
 background: #222;
 height: 40px;
-box-shadow: 0px 2px 2px #111 inset;
+box-shadow: 0px 1px #111 inset, 0 1px rgba(255, 255, 255, 0.08);
 position: relative;
+z-index: 2;
 }
 nav.navigation ul{
 background: transparent;
@@ -1860,21 +1858,11 @@ left: -16px;
 section.odd:after {
 right: -9px;
 }
-#tab.read{
-display:none;
-}
 #tabGradient.reading{
 bottom:0;
 }
 #tab.read #panel_1{
 margin-bottom:0;
-}
-#tab.read.bis{
-display:block;
-position: fixed;
-width: 100%;
-bottom: 0;
-z-index:99;
 }
 }
 

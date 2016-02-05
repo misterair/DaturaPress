@@ -1,4 +1,4 @@
-## DaturaPress 1.2.3 dev/Nightly version.
+## DaturaPress 2.0 beta 1
 
 # *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
 ---
@@ -13,14 +13,10 @@ En vrac:
 * Home "timeline" mais en mieux;
 * full responsive;
 * personnalisation des couleurs;
-* ajout possible d'un logo;
-* ciel qui change en fonction du jour ou nuit;
-* affichage ou non des nuages;
-* sidebar principale à plusieurs volets;
-* sidebar secondaire pour les articles;
+* support des "Images à la Une";
+* sidebar pour la home et sidebar secondaire pour les articles;
 * support des widgets;
 * affichage des commentaires sous forme de conversations;
-* support des widgets;
 * affichage des articles sous forme de journal (texte multi-colonnes) en option;
 * widget "Articles similaires" intégré au thème;
 * page 404 qui fait tomber la pluie;
