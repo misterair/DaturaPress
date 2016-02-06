@@ -1,8 +1,8 @@
 /*
-Theme Name: DaturaPress
+Theme Name: DaturaPressBeta
 Theme URI: http://www.remitaines.com/
 Description: Cats killer carnivore plant theme for Wordpress. It will conquer the world 2.0!
-Version: 2.0 beta 1
+Version: 2.0 beta 2
 Author: Mister aiR
 Author URI: http://www.remitaines.com
 License: BeerWare
@@ -569,26 +569,39 @@ text-shadow: 0 1px rgba(255,255,255,0.16);
 
 
 /*Widgets*/
-#panel_contener ul li:before{
-font-family: "FontAwesome";
-font-size: 1.1em;
-content:"\f138";
-margin-right: 8px;
-color:#D2CCC1;
+.sectionCentrage .widget ul li:before, #panel_contener ul.menu li a:before, #panel_contener .widget_recent_comments ul li:before, #panel_contener .widget_categories ul li:before {
+ font-family: "FontAwesome";
+ font-size: 1.1em;
+ margin-right: 8px;
+ color:#D2CCC1;
 }
+#panel_contener ul.menu li a {
+ font-size: 1.02em;
+ font-variant: small-caps;
+}
+#panel_contener ul.menu li a:before {
+ font-size: 1.48em;
+ content:"\f138";
+}
+#panel_contener ul.menu li a[href^="https://github.com/"]:before {content:"\f113";}
+#panel_contener ul.menu li a[href^="https://twitter.com/"]:before {content:"\f099";}
+#panel_contener ul.menu li a[href^="https://pinterest.com/"]:before {content:"\f0d2";}
+#panel_contener ul.menu li a[href^="https://flickr.com/"]:before {content:"\f16e";}
+#panel_contener ul.menu li a[href^="https://deviantart.com/"]:before {content:"\f1bd";}
+#panel_contener ul.menu li a[href^="https://facebook.com/"]:before {content:"\f230";}
+#panel_contener ul.menu li a[href^="https://linkedin.com/"]:before {content:"\f08c";}
+#panel_contener ul.menu li a[href^="https://youtube.com/"]:before {content:"\f167";}
+#panel_contener ul.menu li a[href^="https://instagram.com/"]:before {content:"\f16d";}
+
 .sectionCentrage .widget ul li:before{
-font-family: "FontAwesome";
-font-size: 1.1em;
-content:"\f138";
-margin-right: 8px;
-color:#555;
+ content:"\f138";
+ color:#555;
+ width: 0.9em;
+ display: inline-block;
+ text-align: center;
 }
-#panel_contener .widget_categories ul li:before{
-content:"\f07b";
-}
-#panel_contener .widget_recent_comments ul li:before{
-content:"\f075";
-}
+#panel_contener .widget_categories ul li:before{content:"\f07b";}
+#panel_contener .widget_recent_comments ul li:before{content:"\f075";}
 
 #panel_contener .widget h2 a{
 color:#ccc;
@@ -605,12 +618,13 @@ text-align: center;
 text-shadow: 0 1px rgba(255,255,255,0.02);
 color:#ccc;
 }
+#panel_contener .widget_tag_cloud h2{display: none}
 .sectionCentrage .widget ul, .sectionCentrage .widget li {
 list-style: outside none none;
 padding: 0px;
 margin: 0px;
 }
-.sectionCentrage .widget a:link, .sectionCentrage .widgeta:visited{
+.sectionCentrage .widget a:link, .sectionCentrage .widget a:visited{
 color:#222;
 }
 
@@ -620,6 +634,12 @@ display:none;
 #panel_contener .widget_rss li:before{
 content:"\f09e";
 }
+#panel_contener .widget_tag_cloud { margin-bottom: 4px;}
+.tagcloud a {
+ color: #bbb;
+ transition-duration: 0.55s;
+}
+.tagcloud a:hover{color:#fff}
 
 /*Search*/
 input.search-field{

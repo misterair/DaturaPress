@@ -5,19 +5,11 @@
 	<aside>
 	<div id="panel_contener">
 		<header>
-			<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
-			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-				<div id="logo" class="picture">
-        			<img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-				</div>
-        	</a>
-			<?php else : ?>
 			<div id="logo" class="name">
-      		  <h1 class='site-title'>
-      		  	<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?><span></span></a>
-    		  </h1>
-    		</div>
-			<?php endif; ?>
+    <h1 class='site-title'>
+     	<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?><span></span></a>
+    </h1>
+   </div>
 			<div id="separator"><div class="separator"></div></div>
 		</header>
 

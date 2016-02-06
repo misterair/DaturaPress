@@ -88,11 +88,28 @@ $wp_customize->add_control('dark_settings', array(
     'darkNight' => 'Thème Sombre la nuit uniquement',
   ),
 ));
+$wp_customize->add_setting('shaarli_url', array());
+$wp_customize->add_control('shaarli_url', array(
+  'label'      => __("Url de l'instance Shaarli (pour icône menu)"),
+  'section'    => 'layout',
+  'settings'   => 'shaarli_url',
+  'type'       => 'textarea',
+));
 $wp_customize->add_section('layout' , array(
 	'title' => __( 'Paramètres', 'Title', 'Text', 'Pages', 'Dark'),
 ));
 }
 add_action( 'customize_register', 'Cloud_customize_register' );
+
+/*Tag Cloud*/
+function custom_tag_cloud_widget($args) {
+	$args['number'] = 32;
+ $args['largest'] = 2.2;
+	$args['smallest'] = 0.74;
+	$args['unit'] = 'em';
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
 
 /*Smileys*/
 add_filter('smilies_src','gkp_new_folder_smiley',10,3);
@@ -263,9 +280,9 @@ function day_body_class($classes = '') {
     $classes[] = 'night';
     return $classes;
   }else{
-    /* Get the Hour and 18hrs (6:00pm) to 07hrs (7:00am) is Night */
+    /* Get the Hour and 19hrs (7:00pm) to 07hrs (7:00am) is Night */
     $h = date('H');
-    if( $h > 17  || $h < 07 ) {
+    if( $h > 19  || $h < 07 ) {
       $classes[] = 'night';
       return $classes;
     }
