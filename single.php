@@ -20,15 +20,15 @@
 		<div class="infos date">
 			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?>. <?php comments_number( 'Aucun Commentaire', 'Un commentaire', '% commentaires' ); ?></p>
 		</div>
-		<div class="sectionCentrage j<?php echo get_theme_mod( 'text_settings'); ?>">
-	        <?php the_content(); ?>
-	    	<?php if ( function_exists ( dynamic_sidebar(5) ) ) : ?>
-				<?php dynamic_sidebar (3); ?>
-			<?php endif; ?>
+		<div class="sectionCentrage <?php echo get_theme_mod( 'text_settings'); ?>">
+	     <?php the_content(); ?>
 	    </div>
+					<?php if ( function_exists ( dynamic_sidebar(3) ) ) : ?>
+								<?php dynamic_sidebar (3); ?>
+					<?php endif; ?>
 	    <div class="infos tags">
-			<?php the_category(' ') ?>
-			<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
+							<?php the_category(' ') ?>
+							<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
 	    </div>
 	</section>
 	<section class="comments">

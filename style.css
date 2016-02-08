@@ -2,7 +2,7 @@
 Theme Name: DaturaPressBeta
 Theme URI: http://www.remitaines.com/
 Description: Cats killer carnivore plant theme for Wordpress. It will conquer the world 2.0!
-Version: 2.0 beta 2
+Version: 2.0 beta 3
 Author: Mister aiR
 Author URI: http://www.remitaines.com
 License: BeerWare
@@ -691,12 +691,13 @@ color: #fff;
 }
 input.search-submit{
 font-family: "FontAwesome";
-font-size: 17px;
-background: none repeat scroll 0% 0% transparent;
+font-size: 1.48em;
+background: transparent;
 color: #fff;
 border: none;
 box-shadow: none;
-text-shadow: 0 1px #171717;
+text-shadow: 0px -1px #000, 0px 1px rgba(255, 255, 255, 0.18);
+text-indent: -0.48em;
 }
 
 /*Article*/
@@ -841,6 +842,7 @@ body#dark #lightbox section.largeThumbnail, body#darkNight.night #lightbox secti
  z-index: 2;
  max-width: 550px;
  position: relative;
+ text-indent: 0;
 }
 #lightbox section.largeThumbnail > img.attachment-404-post-thumbnail{
  width: auto;
@@ -1181,7 +1183,6 @@ section h1 a:link, section h1 a:visited{
  max-width: calc(100% - 36px);
  display: inline-flex;
  text-indent: 0em;
- margin-left: -10px;
 }
 body#dark section h1 a:link, body#dark section h1 a:visited, body#darkNight.night section h1 a:link, body#darkNight.night section h1 a:visited{color: #ddd;}
 #wrap.poney section h1 a:link, #wrap.poney section h1 a:visited{background: #ffff00 !important; color:#9400D3 !important;}
@@ -1453,7 +1454,7 @@ list-style: none outside none;
 max-width: 780px;
 }
 .sectionCentrage ul.relatedPosts,#panel_contener ul.relatedPosts{
-margin: 0 auto;
+margin: -18px auto 10px;
 }
 
 ul.relatedPosts h3{
@@ -1507,26 +1508,36 @@ box-shadow: 0 1px rgba(255,255,255,0.15), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
 border: solid 1px #171717;
 }
 
-ul.relatedPosts li a{
-color:#222;
-text-shadow: 0 1px #fff;
+.infos.tags .widget_similar_widget h2{
+ margin: 2px 0px -0.26em;
+}
+ul.relatedPosts li .centrage{
+ position: absolute;
+ bottom: 6px;
+ left: 0px;
+ text-align: center;
+ text-indent: 0;
+}
+ul.relatedPosts li .centrage a:link, ul.relatedPosts li .centrage a:visited {
 font-variant: small-caps;
 font-weight: bold;
-position: absolute;
-bottom:50%;
-transform: translate(0 , 50%);
-left:0;
-padding:4px;
-opacity:0;
-transition-duration: 0.15s;
+transition-duration: 0.65s;
+text-shadow: 0px -1px #000, 0px 1px rgba(255, 255, 255, 0.18);
+color: #fff;
+box-shadow: 0px -4px 18px #fff, 0px 0px 1px #000;
+background: rgba(34, 34, 34, 0.94) none repeat scroll 0% 0%;
+padding: 0px 4px 2px;
+border-radius: 4px;
+max-width: calc(100% - 24px);
+display: inline-flex;
+line-height: 1.24em;
+font-size: 1.04em;
 }
-li.relatedThumb:hover > .roundIMG > a{
-opacity:1;
+li.relatedThumb > .roundIMG > img{
+ margin: 0 !important;
 }
 li.relatedThumb:hover > .roundIMG > img{
-opacity:0.75;
-filter: url(blur.svg#blur);
--webkit-filter: blur(3px);
+ transform: scale(1.24);
 }
 
 /*Sky*/

@@ -1,4 +1,4 @@
-## DaturaPress 2.0 beta 2
+## DaturaPress 2.0 beta 3
 
 # *Le Thème pour Wordpress inspiré par la Nature, mais qui ne plante pas!*
 ---

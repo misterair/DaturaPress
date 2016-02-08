@@ -265,6 +265,7 @@ echo $sImgString;
 }
 }
 
+/*Avatar DaturaPress*/
 add_filter( 'avatar_defaults', 'newgravatar' );
     function newgravatar ($avatar_defaults) {
     $myavatar = get_bloginfo('template_directory') . '/smileys/avatar.png';
@@ -272,6 +273,7 @@ add_filter( 'avatar_defaults', 'newgravatar' );
     return $avatar_defaults;
 }
 
+/*Sibebars Theme*/
 if ( function_exists('register_sidebar'))
     $sidebar_home = array(
       'name' => __('Sidebar de la home'),
@@ -291,8 +293,8 @@ if ( function_exists('register_sidebar'))
 if ( function_exists ('register_sidebar'))
 	$widget_article = array(
 		'name' => __('Widgets du corps des articles'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => '</div>',
+		'before_widget' => '<div class="infos tags"><div id="%1$s" class="widget %2$s">',
+  'after_widget' => '</div></div>',
 	);
 	register_sidebars(1, $widget_article );
 
@@ -356,7 +358,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 							<li class="relatedThumb">
 								<div class="roundIMG">
 									<?php the_post_thumbnail('archives-post-thumbnail',array(200,200));?>
-									<a rel="external" href="<? the_permalink()?>"><?php the_title(); ?></a>
+									<div class="centrage"><a rel="external" href="<? the_permalink()?>"><?php the_title(); ?></a></div>
 								</div>
 							</li>
 							<? }
