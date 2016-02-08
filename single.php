@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<div id="wrap">
 <?php get_sidebar( 'article' ); ?>
 
 <article>

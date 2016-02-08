@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
- 
- 	
- 
+
+
+
 	<title><?php bloginfo('name') ?><?php if ( is_404() ) : ?> &raquo; <?php _e('Not Found') ?><?php elseif ( is_home() ) : ?> &raquo; <?php bloginfo('description') ?><?php else : ?><?php wp_title() ?><?php endif ?></title>
  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  	<meta name="HandheldFriendly" content="true">
@@ -27,7 +27,7 @@
   $dark_settings = get_theme_mod('dark_settings');
   $darkNight_settings = get_theme_mod('darkNight_settings');
 ?>
-	
+
 <body <?php body_class(); ?> id="<?php echo $dark_settings; ?><?php echo $darkNight_settings; ?>" >
 <!--[if IE]>
   <div style='z-index:999;border:solid #D41C1D; background: #FEEFDA; text-align: center; clear: both; position: relative;'>
@@ -38,4 +38,3 @@
     </div>
   </div>
 <![endif]-->
-<div id="wrap">

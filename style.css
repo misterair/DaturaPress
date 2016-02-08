@@ -47,7 +47,7 @@ text-shadow:0 1px #fff;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-body#dark, body#darkNight.night{background:#333130;}
+body#dark, body.night{background:#333130;}
 h1,h2,h3,h4,h5{text-decoration:none}
 button{cursor: pointer;background:transparent;border:none}
 a:link,a:visited {color: #94B203;text-decoration:none;}
@@ -68,7 +68,7 @@ line-height:1.7em;
 font-size:1.1em;
 white-space:pre-wrap;
 }
-body#dark pre, body#darkNight.night pre{
+body#dark pre, body.night pre{
  border: solid 1px #111;
  background: #171717;
  box-shadow: 0px 1px #333;
@@ -99,7 +99,7 @@ background: #DCD6CD !important;
 text-shadow: 0px 1px rgba(255,255,255,0.08);
 color:#222
 }
-body#dark #commentform input, body#dark #commentform textarea, body#darkNight.night #commentform input, body#darkNight.night #commentform textarea{
+body#dark #commentform input, body#dark #commentform textarea, body.night #commentform input, body.night #commentform textarea{
 background: #222 !important;
 color:#ccc;
 box-shadow: 0px 1px #333, 0px 1px #333 inset;
@@ -756,7 +756,7 @@ position: absolute;
 bottom: 10px;
 line-height: 0px;
 }
-body#dark section:after, body#darkNight.night section:after{
+body#dark section:after, body.night section:after{
 text-shadow: 1px 1px rgba(255, 255, 255, 0.08), 3px 0 #333130, -3px 0 #333130, 0 3px #333130, 0 -3px #333130;
 color:#171717;
 }
@@ -776,7 +776,7 @@ margin:0 24px 8px 24px;
 position:relative;
 padding:0;
 }
-body#dark section > ul, body#darkNight.night section > ul{
+body#dark section > ul, body.night section > ul{
 background: #222;
 color: #fff;
 text-shadow: 0 1px rgba(255, 255, 255, 0.08);
@@ -831,7 +831,7 @@ background:transparent;
 border: none;
 border-bottom: 1px solid #aaa;
 }
-body#dark #lightbox section.largeThumbnail, body#darkNight.night #lightbox section.largeThumbnail{background:transparent;}
+body#dark #lightbox section.largeThumbnail, body.night #lightbox section.largeThumbnail{background:transparent;}
 #lightbox section.largeThumbnail > .ArticleThumb{
  width: auto;
  max-height: 335px;
@@ -857,6 +857,7 @@ body.single-attachment aside #tab{ display: none;}
 body.single-attachment aside #tabGradient{ bottom: 0;}
 body.single-attachment #asideCorner, body.single-attachment #asideCornerShadow { display: block;}
 
+#wrap.images {height: 100%}
 #lightbox.images section.largeThumbnail{
 position: absolute;
 top: 49%;
@@ -944,7 +945,7 @@ border-top:none;
 border-right:none;
 border-color:#222 transparent;
 }
-body#dark section.odd ul > #corner, body#darkNight.night section.odd ul > #corner{
+body#dark section.odd ul > #corner, body.night section.odd ul > #corner{
 border:30px solid;
 border-top:none;
 border-right:none;
@@ -977,7 +978,7 @@ border-top:none;
 border-left:none;
 border-color:#95B304 transparent;
 }
-body#dark section.even ul > #corner, body#darkNight.night section.even ul > #corner{
+body#dark section.even ul > #corner, body.night section.even ul > #corner{
 border:30px solid;
 border-top:none;
 border-left:none;
@@ -1049,7 +1050,7 @@ padding: 4px;
 text-indent: 0;
 transition-duration: 0.35s;
 }
-body#dark section ul #corner p.cornerInfos, body#darkNight.night section ul #corner p.cornerInfos{
+body#dark section ul #corner p.cornerInfos, body.night section ul #corner p.cornerInfos{
 background:#171717;
 box-shadow: 0 1px 2px #000;
 }
@@ -1126,10 +1127,10 @@ display:inline;
 
 nav .caption{
 background:#222;
-border-radius: 14px;
+border-radius: 8px;
 line-height:2.24em;
 font-size: 0.94em;
-box-shadow: 1px 1px rgba(255, 255, 255, 0.45), 0 0 0 2px #D2CCC1;
+box-shadow: 0 1px rgba(255, 255, 255, 0.45), 0 0 0 2px #D2CCC1;
 color: #fff;
 margin: 5px auto 25px;
 max-width: 250px;
@@ -1137,6 +1138,9 @@ overflow: hidden;
 position: relative;
 text-align: center;
 text-shadow: 1px 1px #000;
+}
+body#darkNight nav .caption, body.night nav .caption {
+box-shadow: 0 1px #555, 0 0 0 2px #333130;
 }
 
 .Picture h1 a img {
@@ -1184,7 +1188,7 @@ section h1 a:link, section h1 a:visited{
  display: inline-flex;
  text-indent: 0em;
 }
-body#dark section h1 a:link, body#dark section h1 a:visited, body#darkNight.night section h1 a:link, body#darkNight.night section h1 a:visited{color: #ddd;}
+body#dark section h1 a:link, body#dark section h1 a:visited, body.night section h1 a:link, body.night section h1 a:visited{color: #ddd;}
 #wrap.poney section h1 a:link, #wrap.poney section h1 a:visited{background: #ffff00 !important; color:#9400D3 !important;}
 .infos{
 text-align: center;
@@ -1201,7 +1205,7 @@ width: 100%;
  z-index: 2;
  box-shadow: 0px 1px rgb(204, 204, 204), 0px 2px rgb(255, 255, 255);
 }
-body#dark .infos.date, body#darkNight.night .infos.date{
+body#dark .infos.date, body.night .infos.date{
 color:#eee;
 text-shadow: 0 -1px #171717, 0 1px #333;
 box-shadow: 0px 2px #171717, 0px 2px #555;
@@ -1214,7 +1218,7 @@ float:right;
 box-shadow: 0 -1px #ccc, 0 -2px #fff;
 background: #F7F6F4;
 }
-body#dark .infos.tags, body#darkNight.night .infos.tags{
+body#dark .infos.tags, body.night .infos.tags{
 box-shadow: 0px -1px #171717, 0px -2px #333;
 background: #333130;
 text-shadow: 0 1px #333, 0 -1px #171717;
@@ -1245,7 +1249,7 @@ color:#555;
 margin-right: 0.2em;
 font-size: 1.1em;
 }
-body#dark .infos.tags a[rel='tag']:before, body#darkNight.night .infos.tags a[rel='tag']:before{color:#eee}
+body#dark .infos.tags a[rel='tag']:before, body.night .infos.tags a[rel='tag']:before{color:#eee}
 .infos.tags a[rel='category tag']{
 margin-right: 0.4em;
 font-variant: small-caps;
@@ -1263,7 +1267,7 @@ color:#555;
 margin-right: 0.2em;
 font-size: 1.1em;
 }
-body#dark .infos.tags a[rel='category tag']:before, body#darkNight.night .infos.tags a[rel='category tag']:before{color:#eee}
+body#dark .infos.tags a[rel='category tag']:before, body.night .infos.tags a[rel='category tag']:before{color:#eee}
 
 /*Pictures*/
 section.fluxPicture > ul{
@@ -1313,7 +1317,7 @@ bottom: 0;
 width: 100%;
 box-shadow: 0px 1px #FFF, 0px -1px #CCC inset;
 }
-body#dark .gradient, body#darkNight.night .gradient{ box-shadow: 0px 1px #171717, 0px -1px #222 inset;}
+body#dark .gradient, body.night .gradient{ box-shadow: 0px 1px #171717, 0px -1px #222 inset;}
 .gradient2{
 background: linear-gradient(0deg, rgba(15, 15, 15, 0) 94%, rgba(15, 15, 15, 0.75) 100%) transparent;
 height: 150px;
@@ -1346,7 +1350,7 @@ width:100%;
 background:#F7F6F4;
 box-shadow:0 1px #fff, 0 -5px 4px rgba(15,15,15,0.28);
 }
-body#dark #lightbox section, body#darkNight.night #lightbox section{
+body#dark #lightbox section, body.night #lightbox section{
 background:#333130;
 color:#fff;
 text-shadow:0px -1px #171717, 0 -5px 4px rgba(15,15,15,0.28);
@@ -1368,7 +1372,7 @@ background:transparent;
  box-shadow: 0 1px #fff;
  background: #fff;
 }
-body#dark #lightbox section img, body#darkNight.night #lightbox section img{
+body#dark #lightbox section img, body.night #lightbox section img{
  border: 1px solid #171717;
  box-shadow: 0 1px #333;
   background: #222;
@@ -1499,7 +1503,7 @@ margin: 0 auto;
 box-shadow: 0 1px rgba(255,255,255,0.08), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
 border: solid 1px #ccc;
 }
-body#dark .sectionCentrage ul.relatedPosts  li .roundIMG, body#darkNight.night .sectionCentrage ul.relatedPosts  li .roundIMG{
+body#dark .sectionCentrage ul.relatedPosts  li .roundIMG, body.night .sectionCentrage ul.relatedPosts  li .roundIMG{
 box-shadow: 0 1px rgba(255,255,255,0.08), 0px 0px 3px rgba(0, 0, 0, 0.65) inset;
 border: solid 1px #171717;
 }
@@ -1559,7 +1563,7 @@ body.night #sky{
 background: url('abstract-clouds.png') repeat-x;
 background-color:#311D3C;
 }
-body#dark.night #sky, body#darkNight.night #sky{
+body#dark.night #sky, body.night #sky{
 background: url('abstract-cloudsDark.png') repeat-x;
 background-color:#0F051B;
 }
@@ -1580,7 +1584,7 @@ height: 96px;
 background: url('cloud.png') repeat-x;
 z-index:1;
 }
-body#dark #cloud, body#darkNight.night #cloud{background: url('cloudDark.png') repeat-x;}
+body#dark #cloud, body.night #cloud{background: url('cloudDark.png') repeat-x;}
 /*Tronc*/
 #tronc{
 height: 100%;
@@ -1598,7 +1602,7 @@ margin-left: 3px;
 width: 10px;
 box-shadow:-1x 1px  #131313 inset, 1px 0px #fff;
 }
-body#dark .tronc, body#darkNight.night .tronc{background:#171717;}
+body#dark .tronc, body.night .tronc{background:#171717;}
 #wrap.poney .tronc {background: #00FFED; !important}
 
 /*Pot*/
@@ -1619,7 +1623,7 @@ body#dark .tronc, body#darkNight.night .tronc{background:#171717;}
  box-shadow: 0px 1px #fff inset;
  border: 2px solid #222;
 }
-body#dark .potTop, body#darkNight.night .potTop{
+body#dark .potTop, body.night .potTop{
  background-color: #333130;
  background-image:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 82%, transparent 100%);
  background-image:-webkit-linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.08) 82%, transparent 100%);
@@ -1643,7 +1647,7 @@ body#dark .potTop, body#darkNight.night .potTop{
  border-bottom:none;
  border-color:transparent #252525;
 }
-body#dark .potBottom, body#darkNight.night .potBottom{
+body#dark .potBottom, body.night .potBottom{
 background-color: #333130;
 border:25px solid;
 border-top-width:125px;
@@ -1671,7 +1675,7 @@ border-color:transparent #00FFED !important;
  border-bottom:none;
  border-color:transparent #D2CCC1;
 }
-body#dark .potBottom_bis, body#darkNight.night .potBottom_bis{
+body#dark .potBottom_bis, body.night .potBottom_bis{
 border:25px solid;
 border-top-width:125px;
 border-bottom:none;
@@ -1701,7 +1705,7 @@ text-shadow:1px 1px rgba(255, 255, 255, 0.15), 0 0 1px #0F0F0F;
  background:rgba(220, 214, 205, 0.75);
  box-shadow: 0px -1px #bbb, 0px 3px 4px rgba(15, 15, 15, 0.28) inset;
 }
-body#dark #lightbox section.comments, body#darkNight.night #lightbox section.comments {
+body#dark #lightbox section.comments, body.night #lightbox section.comments {
  background:rgba(34,34,34, 0.75);
  box-shadow: 0px -1px #171717, 0px 3px 4px #111 inset;
 }
@@ -1739,7 +1743,7 @@ margin: 0 auto;
 border: 1px solid #bbb;
 border-radius: 55px;
 }
-body#dark #lightbox section.comments .comment-gravatar img, body#darkNight.night #lightbox section.comments .comment-gravatar img{
+body#dark #lightbox section.comments .comment-gravatar img, body.night #lightbox section.comments .comment-gravatar img{
 box-shadow:0 1px rgba(255,255,255,0.08);
 border: 1px solid #171717;
 }
@@ -1752,7 +1756,7 @@ border: 1px solid #171717;
  display: inline-block;
  position:relative;
 }
-body#dark .commentArea  >.commentmetadata, body#darkNight.night .commentArea  >.commentmetadata{
+body#dark .commentArea  >.commentmetadata, body.night .commentArea  >.commentmetadata{
  background:#333130;
  box-shadow: 0 0 1px 1px #171717, 0 1px #333 inset;
 }
@@ -1770,7 +1774,7 @@ line-height: 55px;
 text-indent: 0px;
 color: #F7F6F4;
 }
-body#dark .commentmetadata:before, body#darkNight.night .commentmetadata:before{
+body#dark .commentmetadata:before, body.night .commentmetadata:before{
  color:#333130;
  text-shadow: -1px 0 #171717;
 }
@@ -1789,7 +1793,7 @@ right: -13px;
 text-shadow: 1px 0 #aaa;
 text-align:right;
 }
-body#dark .commentArea.authorstyle > .commentmetadata:before, body#darkNight.night .commentArea.authorstyle > .commentmetadata:before{
+body#dark .commentArea.authorstyle > .commentmetadata:before, body.night .commentArea.authorstyle > .commentmetadata:before{
  text-shadow: 1px 0 #171717;
 }
 #wrap.poney .commentArea.authorstyle > .commentmetadata:before{
@@ -1811,7 +1815,7 @@ float: right;
  margin: 0px;
  box-shadow:0 -1px #fff, 0 -2px #bbb;
 }
-body#dark .commentsZone, body#darkNight.night .commentsZone{
+body#dark .commentsZone, body.night .commentsZone{
 background:#333130;
 box-shadow: 0 -1px #333, 0 -2px #171717;
 }
@@ -1830,7 +1834,7 @@ box-shadow: 0 -2px #00FFED !important;
  top: -17px;
  color: #F7F6F4;
 }
-body#dark .commentsZone:before, body#darkNight.night .commentsZone:before{
+body#dark .commentsZone:before, body.night .commentsZone:before{
 text-shadow: 0px -1px #171717;
 color: #333130;
 }
@@ -1847,7 +1851,7 @@ text-align:center;
 color: #666;
 font-size: 1.2em;
 }
-body#dark .commentArg, body#darkNight.night .commentArg{
+body#dark .commentArg, body.night .commentArg{
  color:#eee
 }
 #comment {

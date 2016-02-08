@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<div id="wrap" class="images">
 <?php get_sidebar( 'article'); ?>
 
 <article>
@@ -14,11 +15,11 @@
 		<div class="gradientPic bottom"></div>
 	</section>
 </div>
-    
+
 <?php endwhile; ?>
 <footer class="read">
 	<div class="prev"><?php previous_image_link( false, '' ); ?></div>
-    
+
 	<a class="readAction return" href="<?php echo esc_url( get_permalink( $post->post_parent ) ) ?>"
     title="<?php echo esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ) ?>" ></a>
 
@@ -28,5 +29,3 @@
 <?php endif; ?>
 </article>
 <?php get_footer(); ?>
-
-	
