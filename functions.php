@@ -267,8 +267,8 @@ echo $sImgString;
 
 add_filter( 'avatar_defaults', 'newgravatar' );
     function newgravatar ($avatar_defaults) {
-    $myavatar = get_bloginfo('template_directory') . '/layout/gravatar.jpg';
-    $avatar_defaults[$myavatar] = "WPBeginner";
+    $myavatar = get_bloginfo('template_directory') . '/smileys/avatar.png';
+    $avatar_defaults[$myavatar] = "DaturaPress";
     return $avatar_defaults;
 }
 
