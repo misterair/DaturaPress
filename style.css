@@ -53,7 +53,7 @@ button{cursor: pointer;background:transparent;border:none}
 a:link,a:visited {color: #94B203;text-decoration:none;}
 hr{border: 0 none;height: 0.8em;background: transparent}
 
-pre, code{
+pre{
 direction: ltr;
 white-space: pre;
 border: solid 1px #ccc;
@@ -68,7 +68,7 @@ line-height:1.7em;
 font-size:1.1em;
 white-space:pre-wrap;
 }
-body#dark pre, body#darkNight.night pre, body#dark code, body#darkNight.night code {
+body#dark pre, body#darkNight.night pre{
  border: solid 1px #111;
  background: #171717;
  box-shadow: 0px 1px #333;
