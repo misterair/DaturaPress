@@ -1,6 +1,6 @@
 </div>
 </body>
-
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/konami.js"></script>
 <?php
   $title_size = get_theme_mod('title_size');
   $shaarli_url = get_theme_mod('shaarli_url');

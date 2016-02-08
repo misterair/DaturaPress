@@ -13,15 +13,26 @@
 		<div class="caption">Tag: <?php single_cat_title(); ?></div>
 	</nav>
 <?php elseif (is_author()): ?>
-	<nav>
-		<div class="caption author">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 65 ); ?>
-			<div class="content">
-				<h3><?php the_author(); ?></h3>
-				<p><?php the_author_meta('description'); ?></p>
+	<section class="<?php if($oddeven%2 == 0) { echo ' odd'; } else { echo ' even'; }; $oddeven++; ?>">
+		<ul>
+			<div class="Picture">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 520 ); ?>
+				<h1>
+					<a href="#" class="author_img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 110 ); ?></a>
+				</h1>
+				<div class="gradient"></div>
 			</div>
-		</div>
-	</nav>
+			<div class="postContent">
+					<ul class="resume">
+						<h2 style="text-align:center"><?php the_author_posts_link(); ?></h2>
+						<?php the_author_meta('description'); ?>
+					</ul>
+			</div>
+			<div id="corner">
+				<p class="cornerInfos">Auteur qui roxxe du poney!</p>
+			</div>
+		</ul>
+	</section>
 <?php elseif (is_year()): ?>
 	<nav>
 		<div class="caption">Année: <?php the_time( 'Y' ); ?></div>

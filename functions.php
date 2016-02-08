@@ -111,6 +111,32 @@ function custom_tag_cloud_widget($args) {
 }
 add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
 
+/*Guest Author*/
+add_filter( 'the_author', 'guest_author_name' );
+add_filter( 'get_the_author_display_name', 'guest_author_name' );
+
+function guest_author_name( $name ) {
+global $post;
+
+$author = get_post_meta( $post->ID, 'guest-author', true );
+
+if ( $author )
+$name = $author;
+
+return $name;
+}
+
+/*Authors Social Accounts*/
+function my_new_contactmethods( $contactmethods ) {
+// Add Twitter
+$contactmethods['twitter'] = 'Twitter';
+//add Facebook
+$contactmethods['diaspora'] = 'Diaspora*';
+
+return $contactmethods;
+}
+add_filter('user_contactmethods','my_new_contactmethods',10,1);
+
 /*Smileys*/
 add_filter('smilies_src','gkp_new_folder_smiley',10,3);
 function gkp_new_folder_smiley($img_src, $img, $siteurl)  {

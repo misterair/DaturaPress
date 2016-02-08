@@ -22,7 +22,8 @@ En vrac:
 * page 404 qui fait tomber la pluie;
 * thème dark à activer dans les paramètres;
 * option pour activer le thème dark la nuit seulement;
-* icônes de menu personnalisé pour réseaux sociaux, Shaarli et pages *contact*, *a-propos*, et *feed*.
+* icônes de menu personnalisé pour réseaux sociaux, Shaarli et pages *contact*, *a-propos*, et *feed*;
+* ajout url Twitter et Diaspora* pour les profils.
 
 
 Un jour, si tout va bien:

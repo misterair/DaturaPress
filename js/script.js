@@ -13,14 +13,14 @@ function addClass(id,new_class){
        return n;
 }
 function removeClass(id,classToRemove){
- 
+
 var i = 0,
 n = 0,
 $id = document.getElementById(id),
 classes = classToRemove.split(",");
- 
+
 for(; i < classes.length; i++) {
- 
+
 if( $id.className.indexOf(classes[i]) > -1 ) {
 $id.className = $id.className.replace(classes[i],'').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 }
