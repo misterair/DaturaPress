@@ -28,6 +28,7 @@
    #panel_contener ul.menu li a[href^="<?php echo esc_url( home_url( '/' ) ); ?>contact/"]:before {content:"\f0e0";}
    #panel_contener ul.menu li a[href^="<?php echo esc_url( home_url( '/' ) ); ?>a-propos/"]:before {content:"\f15c";}
    #panel_contener ul.menu li a[href^="<?php echo $shaarli_url; ?>"]:before {content:"\f08d";}
+   aside ul li:hover, aside ul li:hover a:link, aside ul li:hover a:visited, aside ul li:hover a::before{ color: <?php echo $link_color; ?> !important; }
 </style>
 
 </html>

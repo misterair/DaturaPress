@@ -268,7 +268,7 @@ echo $sImgString;
 /*Avatar DaturaPress*/
 add_filter( 'avatar_defaults', 'newgravatar' );
     function newgravatar ($avatar_defaults) {
-    $myavatar = get_bloginfo('template_directory') . '/smileys/avatar.png';
+    $myavatar = get_bloginfo('template_directory') . '/smileys/avatar.gif';
     $avatar_defaults[$myavatar] = "DaturaPress";
     return $avatar_defaults;
 }
@@ -293,7 +293,7 @@ if ( function_exists('register_sidebar'))
 if ( function_exists ('register_sidebar'))
 	$widget_article = array(
 		'name' => __('Widgets du corps des articles'),
-		'before_widget' => '<div class="infos tags"><div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="infos tags"><div id="separator"><div class="separator"></div></div><div id="%1$s" class="widget %2$s">',
   'after_widget' => '</div></div>',
 	);
 	register_sidebars(1, $widget_article );

@@ -19,7 +19,8 @@
 	</section>
 	<section class="content">
 		<div class="infos date">
-			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?>. <?php comments_number( 'Aucun Commentaire', 'Un commentaire', '% commentaires' ); ?></p>
+			<p class="articleInfos">Le <?php the_time('j F Y') ?> par <?php the_author_posts_link(); ?>. (<a href="#commentform"><?php comments_number( 'Aucun Commentaire', 'Un commentaire', '% commentaires' ); ?></a>)</p>
+			<div id="separator"><div class="separator"></div></div>
 		</div>
 		<div class="sectionCentrage <?php echo get_theme_mod( 'text_settings'); ?>">
 	     <?php the_content(); ?>
@@ -28,6 +29,7 @@
 								<?php dynamic_sidebar (3); ?>
 					<?php endif; ?>
 	    <div class="infos tags">
+							<div id="separator"><div class="separator"></div></div>
 							<?php the_category(' ') ?>
 							<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
 	    </div>
